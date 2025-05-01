@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="تفاصيل المشروعات القومية - مصر بعيون النيل">
+  <title>تفاصيل المشروع - مصر بعيون النيل</title>
+  <link rel="manifest" href="/manifest.json">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Dark theme video -->
+    <video class="video-background video-dark" autoplay muted loop playsinline preload="auto">
+        <source src="live wallbaber/blackhole.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+    
+    <!-- Light theme video -->
+    <video class="video-background video-light" autoplay muted loop playsinline preload="auto">
+        <source src="live wallbaber/cards-video.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="content-wrapper">
+  <!-- Loading Spinner -->
+  <div id="loading-spinner">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="animate__animated animate__fadeInDown animate__delay-1s">
+    <div class="header-wrapper">
+      <img src="images/logo.png" alt="شعار مصر بعيون النيل" class="header-logo">
+      <div class="header-content">
+        <h1>مصر بعيون النيل</h1>
+        <nav aria-label="القائمة الرئيسية">
+          <ul>
+            <li><a href="index.html" data-lang="home">الرئيسية</a></li>
+            <li><a href="goals.html" data-lang="goals">الأهداف</a></li>
+            <li><a href="projects.html" data-lang="projects">المشاريع</a></li>
+            <li><a href="videos.html" data-lang="videos">فيديوهات</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-controls">
+        <button id="themeSwitch" class="theme-switch" aria-label="تغيير المظهر">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <button id="langSwitch" class="lang-switch" aria-label="تغيير اللغة">
+          <span class="lang-text" data-lang="ar">EN</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="card-details">
+      <div class="container">
+        <div class="card-header animate__animated animate__fadeInDown">
+          <h2 id="projectTitle">العاصمة الإدارية الجديدة</h2>
+          <p id="projectSubtitle">مستقبل مصر الحديثة ومركز الإبداع والابتكار</p>
+        </div>
+        
+        <div class="card-content">
+          <div class="card-image" data-aos="fade-left">
+            <img id="projectImage" src="images/capital.jpg" alt="صورة العاصمة الإدارية الجديدة" loading="lazy">
+          </div>
+          
+          <div class="card-info" data-aos="fade-right">
+            <h3>تفاصيل المشروع</h3>
+            <p id="projectDescription">
+              العاصمة الإدارية الجديدة هي مشروع قومي ضخم يهدف إلى إنشاء مدينة ذكية حديثة تليق بمصر المستقبل. تقع على مساحة 170 ألف فدان، وتضم:
+            </p>
+            <ul id="projectFeatures">
+              <li>مجمع الوزارات والمباني الحكومية</li>
+              <li>أكبر برج في أفريقيا</li>
+              <li>مطار دولي على أحدث مستوى</li>
+              <li>مدينة المعرفة ومركز الابتكار</li>
+              <li>حي المال والأعمال</li>
+              <li>مناطق سكنية عصرية</li>
+              <li>شبكة مواصلات متطورة</li>
+              <li>مساحات خضراء وحدائق</li>
+            </ul>
+          </div>
+        </div>
+
+        </div>
+
+        <div class="project-gallery" data-aos="fade-up">
+          <!-- Additional project images or content can be added here -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="animate__animated animate__fadeInUp animate__delay-2s">
+    <div class="footer-content">
+      <h3 data-lang="footer-title">مبادرة "مصر بعيون النيل"</h3>
+      <p data-lang="footer-subtitle">معًا بالوعي نحميها 🇪🇬</p>
+      <ul class="footer-links">
+        <li><a href="index.html" data-lang="home">الرئيسية</a></li>
+        <li><a href="goals.html" data-lang="goals">الأهداف</a></li>
+        <li><a href="projects.html" data-lang="projects">المشاريع</a></li>
+        <li><a href="videos.html" data-lang="videos">فيديوهات</a></li>
+      </ul>
+      <p class="copyright">
+        &copy; <span id="currentYear"></span> <span data-lang="copyright">جميع الحقوق محفوظة - طلاب مدارس النيل</span> 💡
+      </p>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="اطلع فوق">⬆️</button>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Translations object containing all text content in both languages
+    const translations = {
+      ar: {
+        "page-title": "تفاصيل المشروع | مصر بعيون النيل",
+        "logo-alt": "شعار مصر بعيون النيل",
+        "site-title": "مصر بعيون النيل",
+        "home": "الرئيسية",
+        "goals": "الأهداف",
+        "projects": "المشاريع",
+        "videos": "فيديوهات",
+        "theme-switch-label": "تغيير المظهر",
+        "lang-switch-label": "تغيير اللغة",
+        "project-details": "تفاصيل المشروع",
+        "project-features": "مميزات المشروع",
+        "project-gallery": "معرض الصور",
+        "footer-title": 'مبادرة "مصر بعيون النيل"',
+        "footer-subtitle": "معًا بالوعي نحميها 🇪🇬",
+        "copyright": "جميع الحقوق محفوظة - طلاب مدارس النيل",
+        "back-to-top": "⬆️"
+      },
+      en: {
+        "page-title": "Project Details | Egypt Through Nile's Eyes",
+        "logo-alt": "Egypt Through Nile's Eyes Logo",
+        "site-title": "Egypt Through Nile's Eyes",
+        "home": "Home",
+        "goals": "Goals",
+        "projects": "Projects",
+        "videos": "Videos",
+        "theme-switch-label": "Change Theme",
+        "lang-switch-label": "Change Language",
+        "project-details": "Project Details",
+        "project-features": "Project Features",
+        "project-gallery": "Photo Gallery",
+        "footer-title": '"Egypt Through Nile\'s Eyes" Initiative',
+        "footer-subtitle": "Together with awareness, we protect it 🇪🇬",
+        "copyright": "All Rights Reserved - Nile Schools Students",
+        "back-to-top": "⬆️"
+      }
+    };
+
+    // Projects data
+    const projects = {
+      capital: {
+        title: 'العاصمة الإدارية الجديدة',
+        subtitle: 'مستقبل مصر الحديثة ومركز الإبداع والابتكار',
+        image: 'images/capital.jpg',
+        description: 'العاصمة الإدارية الجديدة هي مشروع قومي ضخم يهدف إلى إنشاء مدينة ذكية حديثة تليق بمصر المستقبل. تقع على مساحة 170 ألف فدان، وتضم:',
+        features: [
+          'مجمع الوزارات والمباني الحكومية',
+          'أكبر برج في أفريقيا',
+          'مطار دولي على أحدث مستوى',
+          'مدينة المعرفة ومركز الابتكار',
+          'حي المال والأعمال',
+          'مناطق سكنية عصرية',
+          'شبكة مواصلات متطورة',
+          'مساحات خضراء وحدائق'
+        ]
+      },
+      hayaKarima: {
+        title: 'حياة كريمة',
+        subtitle: 'تطوير شامل للريف المصري',
+        image: 'images/haya-karima.jpg',
+        description: 'مبادرة حياة كريمة هي أكبر مشروع تنموي في تاريخ مصر لتطوير الريف المصري وتحسين مستوى معيشة المواطنين.',
+        features: [
+          'تطوير البنية التحتية',
+          'تحسين الخدمات الصحية',
+          'تطوير المدارس والتعليم',
+          'توفير فرص عمل',
+          'دعم المشروعات الصغيرة',
+          'تحسين شبكات المياه والصرف',
+          'تطوير الطرق والمواصلات',
+          'دعم الأسر الأكثر احتياجاً'
+        ]
+      },
+      roads: {
+        title: 'الطرق والكباري',
+        subtitle: 'أكبر شبكة طرق حديثة في مصر',
+        image: 'images/roads.jpg',
+        description: 'أكبر شبكة طرق حديثة بتربط بين المحافظات وبتسهل النقل والتجارة.',
+        features: [
+          'طريق القاهرة - الإسكندرية الصحراوي',
+          'طريق القاهرة - السويس',
+          'طريق القاهرة - العين السخنة',
+          'طريق القاهرة - أسوان'
+        ]
+      },
+      suezCanal: {
+        title: 'توسعة قناة السويس',
+        subtitle: 'مشروع القرن الحادي والعشرين',
+        image: 'images/suez-canal.jpg',
+        description: 'مشروع ضخم لزيادة قدرة قناة السويس على استيعاب السفن وزيادة حركة التجارة العالمية.',
+        features: [
+          'توسعة القناة لاستيعاب السفن العملاقة',
+          'زيادة عدد السفن العابرة',
+          'تقليل وقت العبور',
+          'زيادة الإيرادات',
+          'تطوير المنطقة الاقتصادية',
+          'إنشاء مناطق صناعية',
+          'تطوير الموانئ',
+          'خلق فرص عمل جديدة'
+        ]
+      },
+      benbanSolar: {
+        title: 'مجمع بنبان للطاقة الشمسية',
+        subtitle: 'أكبر محطة طاقة شمسية في العالم',
+        image: 'images/benban-solar.jpg',
+        description: 'أحد أكبر مشاريع الطاقة الشمسية في العالم، يساهم في تعزيز الطاقة النظيفة في مصر.',
+        features: [
+          '32 محطة طاقة شمسية',
+          'إنتاج 1.5 جيجاوات من الكهرباء',
+          'توفير الطاقة النظيفة',
+          'خفض انبعاثات الكربون',
+          'توفير فرص عمل',
+          'نقل التكنولوجيا',
+          'تعزيز الاستثمار',
+          'دعم التنمية المستدامة'
+        ]
+      },
+      grandMuseum: {
+        title: 'المتحف المصري الكبير',
+        subtitle: 'أكبر متحف أثري في العالم',
+        image: 'images/grand-museum.jpg',
+        description: 'أكبر متحف أثري في العالم، يعرض تاريخ مصر العريق وآثارها الفريدة.',
+        features: [
+          'عرض 50 ألف قطعة أثرية',
+          'قاعة توت عنخ آمون',
+          'مركز ترميم متطور',
+          'قاعات عرض حديثة',
+          'مركز أبحاث',
+          'مكتبة متخصصة',
+          'مركز مؤتمرات',
+          'مناطق ترفيهية'
+        ]
+      },
+      dabaa: {
+        title: 'محطة الضبعة النووية',
+        subtitle: 'أول محطة نووية مصرية',
+        image: 'images/dabaa.jpg',
+        description: 'أول محطة نووية مصرية لإنتاج الكهرباء بقدرة 4800 ميجاوات لدعم احتياجات الطاقة المتزايدة.',
+        features: [
+          '4 مفاعلات نووية',
+          'إنتاج 4800 ميجاوات',
+          'توفير الطاقة النظيفة',
+          'نقل التكنولوجيا المتقدمة',
+          'توفير فرص عمل',
+          'تدريب الكوادر المصرية',
+          'تعزيز الأمن القومي',
+          'دعم التنمية المستدامة'
+        ]
+      },
+      newAlamein: {
+        title: 'مدينة العلمين الجديدة',
+        subtitle: 'مدينة سياحية عصرية',
+        image: 'images/new-alamein.jpg',
+        description: 'مدينة سياحية عصرية على ساحل البحر المتوسط، تضم مناطق سكنية وسياحية وترفيهية.',
+        features: [
+          'مناطق سكنية فاخرة',
+          'منتجعات سياحية',
+          'مراكز ترفيهية',
+          'جامعة دولية',
+          'مركز طبي متطور',
+          'ميناء سياحي',
+          'شواطئ رملية',
+          'حدائق ومساحات خضراء'
+        ]
+      },
+      suezTunnels: {
+        title: 'أنفاق قناة السويس',
+        subtitle: 'ربط سيناء بباقي مصر',
+        image: 'images/suez-tunnels.jpg',
+        description: 'أنفاق عملاقة أسفل قناة السويس تربط سيناء بباقي أنحاء مصر وتعزز التنمية.',
+        features: [
+          'نفقين للسيارات',
+          'نفق للسكك الحديدية',
+          'ربط سيناء بالقاهرة',
+          'تسهيل حركة التجارة',
+          'دعم التنمية في سيناء',
+          'تعزيز الأمن القومي',
+          'توفير فرص عمل',
+          'تحسين البنية التحتية'
+        ]
+      },
+      newDelta: {
+        title: 'مشروع الدلتا الجديدة',
+        subtitle: 'استصلاح مليون فدان',
+        image: 'images/new-delta.jpg',
+        description: 'مشروع ضخم لاستصلاح مليون فدان من الأراضي الصحراوية وتحويلها إلى أراضي زراعية خصبة.',
+        features: [
+          'استصلاح مليون فدان',
+          'توفير فرص عمل',
+          'زيادة الإنتاج الزراعي',
+          'تحسين الأمن الغذائي',
+          'تطوير البنية التحتية',
+          'إنشاء مجتمعات عمرانية',
+          'تطوير الصناعات الزراعية',
+          'دعم التنمية المستدامة'
+        ]
+      },
+      monorail: {
+        title: 'مونوريل العاصمة الإدارية',
+        subtitle: 'نظام نقل متطور',
+        image: 'images/monorail.jpg',
+        description: 'نظام نقل متطور يربط العاصمة الإدارية الجديدة بالقاهرة الكبرى والمدن الجديدة.',
+        features: [
+          'خطين للمونوريل',
+          'ربط العاصمة بالقاهرة',
+          'تخفيف الازدحام المروري',
+          'نقل سريع وآمن',
+          'توفير فرص عمل',
+          'تطوير البنية التحتية',
+          'دعم التنمية المستدامة',
+          'تحسين جودة الحياة'
+        ]
+      },
+      galala: {
+        title: 'مدينة الجلالة',
+        subtitle: 'مدينة متكاملة على هضبة الجلالة',
+        image: 'images/galala.jpg',
+        description: 'مدينة متكاملة على هضبة الجلالة تضم منتجعات سياحية وجامعة ومدينة طبية ومناطق سكنية.',
+        features: [
+          'منتجعات سياحية فاخرة',
+          'جامعة دولية',
+          'مدينة طبية متطورة',
+          'مناطق سكنية',
+          'مراكز ترفيهية',
+          'شواطئ رملية',
+          'حدائق ومساحات خضراء',
+          'بنية تحتية متطورة'
+        ]
+      },
+      rodElFarag: {
+        title: 'محور روض الفرج',
+        subtitle: 'أعرض كوبري في العالم',
+        image: 'images/rod-el-farag.jpg',
+        description: 'كوبري عملاق فوق نهر النيل يعد من أعرض الكباري في العالم ويخفف الازدحام المروري في القاهرة.',
+        features: [
+          'أعرض كوبري في العالم',
+          'تخفيف الازدحام المروري',
+          'ربط شرق وغرب القاهرة',
+          'تحسين حركة النقل',
+          'تطوير البنية التحتية',
+          'تحسين جودة الحياة',
+          'دعم التنمية الاقتصادية',
+          'توفير فرص عمل'
+        ]
+      },
+      furnitureCity: {
+        title: 'مدينة الأثاث بدمياط',
+        subtitle: 'مركز صناعة الأثاث المصري',
+        image: 'images/furniture-city.jpg',
+        description: 'مدينة صناعية متخصصة في صناعة الأثاث تضم مصانع ومراكز تصميم ومعارض لتطوير صناعة الأثاث المصري.',
+        features: [
+          'مصانع متطورة',
+          'مراكز تصميم',
+          'معارض دائمة',
+          'توفير فرص عمل',
+          'دعم الصناعة المحلية',
+          'تعزيز الصادرات',
+          'نقل التكنولوجيا',
+          'تدريب الكوادر'
+        ]
+      },
+      goldenTriangle: {
+        title: 'مثلث الذهب',
+        subtitle: 'مركز اقتصادي عالمي',
+        image: 'images/golden-triangle.jpg',
+        description: 'مشروع تنموي لاستغلال الثروات المعدنية والتعدينية في منطقة الصعيد وتحويلها لمركز اقتصادي عالمي.',
+        features: [
+          'استغلال الثروات المعدنية',
+          'تطوير الصناعة التعدينية',
+          'توفير فرص عمل',
+          'تنمية الصعيد',
+          'جذب الاستثمارات',
+          'نقل التكنولوجيا',
+          'تدريب الكوادر',
+          'دعم التنمية المستدامة'
+        ]
+      },
+      mahmoudia: {
+        title: 'محور المحمودية',
+        subtitle: 'تطوير محور المحمودية بالإسكندرية',
+        image: 'images/mahmoudia.jpg',
+        description: 'مشروع تطوير محور المحمودية بالإسكندرية لتحسين الحركة المرورية وتجميل المنطقة.',
+        features: [
+          'تطوير الطرق',
+          'تحسين الحركة المرورية',
+          'تجميل المنطقة',
+          'إنشاء مناطق خضراء',
+          'تطوير البنية التحتية',
+          'تحسين جودة الحياة',
+          'دعم السياحة',
+          'خدمة المواطنين'
+        ]
+      },
+      medicineCity: {
+        title: 'مدينة الدواء',
+        subtitle: 'مجمع صناعي متكامل للدواء',
+        image: 'images/medicine-city.jpg',
+        description: 'مجمع صناعي متكامل لصناعة الدواء المصري وتوطين صناعة الدواء في مصر.',
+        features: [
+          'مصانع أدوية متطورة',
+          'مراكز أبحاث',
+          'معامل جودة',
+          'توطين صناعة الدواء',
+          'توفير فرص عمل',
+          'نقل التكنولوجيا',
+          'دعم الاقتصاد الوطني',
+          'تحقيق الاكتفاء الذاتي'
+        ]
+      },
+      robikiCity: {
+        title: 'مدينة الروبيكي للجلود',
+        subtitle: 'مركز صناعة الجلود في مصر',
+        image: 'images/robiki.jpg',
+        description: 'مدينة صناعية متخصصة في صناعة الجلود وتطوير هذه الصناعة في مصر.',
+        features: [
+          'مصانع دباغة متطورة',
+          'وحدات معالجة المخلفات',
+          'مراكز تدريب',
+          'معامل جودة',
+          'توفير فرص عمل',
+          'حماية البيئة',
+          'تطوير الصناعة',
+          'دعم الصادرات'
+        ]
+      },
+      historicCairo: {
+        title: 'تطوير القاهرة التاريخية',
+        subtitle: 'إحياء تراث القاهرة',
+        image: 'images/historic-cairo.jpg',
+        description: 'مشروع إحياء وتطوير منطقة القاهرة التاريخية وترميم المباني الأثرية.',
+        features: [
+          'ترميم المباني الأثرية',
+          'تطوير الشوارع التاريخية',
+          'إحياء الحرف التقليدية',
+          'تنشيط السياحة',
+          'تحسين البنية التحتية',
+          'حماية التراث',
+          'دعم السكان المحليين',
+          'تجميل المنطقة'
+        ]
+      },
+      scienceCity: {
+        title: 'مدينة العلوم والتكنولوجيا',
+        subtitle: 'مركز البحث العلمي والابتكار',
+        image: 'images/science-city.jpg',
+        description: 'مركز للبحث العلمي والابتكار في مصر، يضم معامل ومراكز أبحاث متطورة.',
+        features: [
+          'معامل بحثية متطورة',
+          'مراكز ابتكار',
+          'حاضنات تكنولوجية',
+          'مراكز تدريب',
+          'دعم البحث العلمي',
+          'تطوير التكنولوجيا',
+          'ربط الصناعة بالبحث',
+          'دعم الابتكار'
+        ]
+      },
+      millionFeddan: {
+        title: 'مشروع المليون ونصف فدان',
+        subtitle: 'توسيع الرقعة الزراعية',
+        image: 'images/million-feddan.jpg',
+        description: 'مشروع استصلاح وزراعة مليون ونصف فدان لزيادة الرقعة الزراعية في مصر.',
+        features: [
+          'استصلاح الأراضي',
+          'زيادة الإنتاج الزراعي',
+          'توفير فرص عمل',
+          'تحقيق الأمن الغذائي',
+          'إنشاء مجتمعات جديدة',
+          'تطوير الري الحديث',
+          'دعم المزارعين',
+          'التنمية المستدامة'
+        ]
+      },
+      artsCity: {
+        title: 'مدينة الفنون والثقافة',
+        subtitle: 'مركز إشعاع ثقافي وفني',
+        image: 'images/arts-city.jpg',
+        description: 'مركز ثقافي وفني متكامل يضم مسارح وقاعات عرض ومراكز تدريب فنية.',
+        features: [
+          'مسارح حديثة',
+          'قاعات عرض',
+          'مراكز تدريب',
+          'استوديوهات فنية',
+          'مكتبات ثقافية',
+          'مراكز إبداع',
+          'دعم الفنون',
+          'تنمية المواهب'
+        ]
+      },
+      manzalaLake: {
+        title: 'تطوير بحيرة المنزلة',
+        subtitle: 'حماية الثروة السمكية',
+        image: 'images/manzala-lake.jpg',
+        description: 'مشروع تطهير وتنمية بحيرة المنزلة لزيادة الثروة السمكية وحماية البيئة.',
+        features: [
+          'تطهير البحيرة',
+          'حماية الثروة السمكية',
+          'معالجة التلوث',
+          'دعم الصيادين',
+          'تطوير الموانئ',
+          'حماية البيئة',
+          'زيادة الإنتاج السمكي',
+          'تنمية المنطقة'
+        ]
+      },
+      electricTrain: {
+        title: 'القطار الكهربائي السريع',
+        subtitle: 'نقل سريع ومتطور',
+        image: 'images/electric-train.jpg',
+        description: 'شبكة قطارات كهربائية سريعة تربط مدن مصر الجديدة والقائمة.',
+        features: [
+          'سرعة وأمان',
+          'ربط المدن الجديدة',
+          'تقليل الازدحام',
+          'نقل صديق للبيئة',
+          'توفير الوقت',
+          'راحة المسافرين',
+          'تطوير النقل العام',
+          'دعم التنمية'
+        ]
+      },
+      galalaTourism: {
+        title: 'مدينة الجلالة السياحية',
+        subtitle: 'وجهة سياحية عالمية',
+        image: 'images/galala-tourism.jpg',
+        description: 'منتجع سياحي متكامل على البحر الأحمر يضم فنادق ومراكز ترفيهية.',
+        features: [
+          'فنادق عالمية',
+          'مراكز ترفيهية',
+          'شواطئ خلابة',
+          'مرافق رياضية',
+          'مطاعم وكافيهات',
+          'مراكز تسوق',
+          'خدمات سياحية',
+          'مناظر طبيعية'
+        ]
+      },
+      irrigationNetwork: {
+        title: 'تطوير شبكة الري',
+        subtitle: 'ترشيد استهلاك المياه',
+        image: 'images/irrigation.jpg',
+        description: 'مشروع تطوير وتحديث شبكة الري في مصر لترشيد استهلاك المياه.',
+        features: [
+          'تحديث شبكات الري',
+          'ترشيد استهلاك المياه',
+          'زيادة كفاءة الري',
+          'حماية الموارد المائية',
+          'دعم المزارعين',
+          'تطوير الزراعة',
+          'استخدام التكنولوجيا',
+          'التنمية المستدامة'
+        ]
+      },
+      slumDevelopment: {
+        title: 'تطوير العشوائيات',
+        subtitle: 'تحسين جودة الحياة',
+        image: 'images/slum-development.jpg',
+        description: 'مشروع تطوير المناطق العشوائية وتحويلها لمناطق سكنية حضارية.',
+        features: [
+          'تطوير المساكن',
+          'تحسين البنية التحتية',
+          'توفير الخدمات',
+          'إنشاء مناطق خضراء',
+          'تحسين جودة الحياة',
+          'دعم السكان',
+          'تجميل المناطق',
+          'التنمية المستدامة'
+        ]
+      },
+      civilizationMuseum: {
+        title: 'المتحف القومي للحضارة',
+        subtitle: 'نافذة على تاريخ مصر',
+        image: 'images/civilization-museum.jpg',
+        description: 'متحف يعرض تاريخ الحضارة المصرية عبر العصور المختلفة.',
+        features: [
+          'عرض القطع الأثرية',
+          'قاعات تاريخية',
+          'مركز ترميم',
+          'مكتبة متخصصة',
+          'برامج تعليمية',
+          'معارض مؤقتة',
+          'أنشطة ثقافية',
+          'خدمات سياحية'
+        ]
+      },
+      waterDesalination: {
+        title: 'محطات تحلية المياه',
+        subtitle: 'توفير مياه الشرب النظيفة',
+        image: 'images/water-desalination.jpg',
+        description: 'مشروع إنشاء محطات تحلية مياه البحر لتوفير مياه الشرب النظيفة.',
+        features: [
+          'تحلية مياه البحر',
+          'توفير مياه نظيفة',
+          'تكنولوجيا متطورة',
+          'حماية البيئة',
+          'خدمة المجتمع',
+          'تأمين احتياجات المياه',
+          'دعم التنمية',
+          'استدامة الموارد'
+        ]
+      },
+      electricityNetwork: {
+        title: 'تطوير شبكة الكهرباء',
+        subtitle: 'تلبية احتياجات التنمية',
+        image: 'images/electricity-network.jpg',
+        description: 'مشروع تحديث وتطوير شبكة الكهرباء في مصر لتلبية احتياجات التنمية.',
+        features: [
+          'تحديث الشبكة',
+          'زيادة القدرة',
+          'تقليل الفاقد',
+          'تحسين الخدمة',
+          'دعم الصناعة',
+          'تأمين الإمداد',
+          'استخدام التكنولوجيا',
+          'التنمية المستدامة'
+        ]
+      }
+    };
+    
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-in-out',
+    });
+    
+    // Update year automatically
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Loading spinner
+    window.addEventListener('load', function() {
+      document.getElementById('loading-spinner').style.display = 'none';
+    });
+    
+    // Back to top button
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    };
+    
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Theme Switcher
+    const themeSwitch = document.getElementById('themeSwitch');
+    const themeIcon = themeSwitch.querySelector('.theme-icon');
+    let currentTheme = localStorage.getItem('theme') || 'light';
+    
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      localStorage.setItem('theme', theme);
+    }
+    
+    setTheme(currentTheme);
+    
+    themeSwitch.addEventListener('click', () => {
+      currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+      setTheme(currentTheme);
+    });
+
+    // Language Switcher
+    const langSwitch = document.getElementById('langSwitch');
+    const langText = langSwitch.querySelector('.lang-text');
+    let currentLang = localStorage.getItem('language') || 'ar';
+
+    // Function to update page content based on selected language
+    function updateContent(lang) {
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      langText.textContent = lang === 'ar' ? 'EN' : 'عربي';
+      
+      // Update all elements with data-lang attribute
+      document.querySelectorAll('[data-lang]').forEach(element => {
+        const key = element.getAttribute('data-lang');
+        if (translations[lang][key]) {
+          if (element.tagName === 'TITLE' || element.hasAttribute('title')) {
+            element.title = translations[lang][key];
+          }
+          if (element.tagName === 'META' && element.getAttribute('name') === 'description') {
+            element.setAttribute('content', translations[lang][key]);
+          }
+          if (element.tagName === 'IMG') {
+            element.alt = translations[lang][key];
+          } else {
+            element.textContent = translations[lang][key];
+          }
+        }
+      });
+
+      // Store language preference
+      localStorage.setItem('language', lang);
+    }
+
+    // Initialize page with stored language preference
+    updateContent(currentLang);
+
+    // Language switch event listener
+    langSwitch.addEventListener('click', () => {
+      currentLang = currentLang === 'ar' ? 'en' : 'ar';
+      updateContent(currentLang);
+    });
+
+    // Get project details from URL parameters
+    function getProjectDetails() {
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('id');
+        
+        console.log('Loading project details for ID:', projectId);
+        console.log('Available projects:', Object.keys(projects));
+        
+        if (!projectId) {
+          console.error('No project ID found in URL');
+          window.location.href = 'projects.html';
+          return;
+        }
+        
+        if (projects[projectId]) {
+          const project = projects[projectId];
+          console.log('Found project data:', project);
+          
+          // Update page title
+          document.title = project.title;
+          
+          // Update meta description
+          const metaDescription = document.querySelector('meta[name="description"]');
+          if (metaDescription) {
+            metaDescription.setAttribute('content', project.description);
+          }
+          
+          // Update content
+          document.getElementById('projectTitle').textContent = project.title;
+          document.getElementById('projectSubtitle').textContent = project.subtitle;
+          document.getElementById('projectImage').src = project.image;
+          document.getElementById('projectImage').alt = `صورة ${project.title}`;
+          document.getElementById('projectDescription').textContent = project.description;
+          
+          const featuresList = document.getElementById('projectFeatures');
+          featuresList.innerHTML = project.features.map(feature => `<li>${feature}</li>`).join('');
+          
+          console.log('Successfully loaded project details');
+        } else {
+          console.error('Project ID not found in data:', projectId);
+          window.location.href = 'projects.html';
+        }
+      } catch (error) {
+        console.error('Error loading project details:', error);
+        window.location.href = 'projects.html';
+      }
+    }
+
+    // Call getProjectDetails immediately
+    getProjectDetails();
+
+    // Also call it when the page loads (in case of dynamic content)
+    window.addEventListener('load', getProjectDetails);
+  </script>
+</div>
+</body>
+</html> 

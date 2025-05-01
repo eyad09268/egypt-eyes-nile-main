@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="المشروعات القومية في مصر - مبادرة مصر بعيون النيل">
+  <title data-lang="page-title">المشروعات القومية | مصر بعيون النيل</title>
+  <link rel="manifest" href="/manifest.json">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('ServiceWorker registration successful');
+          })
+          .catch(err => {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+      });
+    }
+  </script>
+</head>
+<body>
+    <!-- Dark theme video -->
+    <video class="video-background video-dark" autoplay muted loop playsinline preload="auto">
+        <source src="live wallbaber/blackhole.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+    
+    <!-- Light theme video -->
+    <video class="video-background video-light" autoplay muted loop playsinline preload="auto">
+        <source src="live wallbaber/cards-video.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="content-wrapper">
+    <!-- Loading Spinner -->
+    <div id="loading-spinner">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="animate__animated animate__fadeInDown animate__delay-1s">
+      <div class="header-wrapper">
+        <img src="images/logo.png" alt="شعار مصر بعيون النيل" class="header-logo">
+        <div class="header-content">
+          <h1>مصر بعيون النيل</h1>
+          <nav aria-label="القائمة الرئيسية">
+            <ul>
+              <li><a href="index.html" class="active" data-lang="home">الرئيسية</a></li>
+              <li><a href="goals.html" data-lang="goals">الأهداف</a></li>
+              <li><a href="projects.html" data-lang="projects">المشاريع</a></li>
+              <li><a href="videos.html" data-lang="videos">فيديوهات</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header-controls">
+          <button id="themeSwitch" class="theme-switch" aria-label="تغيير المظهر">
+            <span class="theme-icon">🌙</span>
+          </button>
+          <button id="langSwitch" class="lang-switch" aria-label="تغيير اللغة">
+            <span class="lang-text" data-lang="ar">EN</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <section class="projects">
+        <div class="container">
+          <h2 class="animate__animated animate__fadeInUp animate__delay-1s" data-lang="main-projects">أهم المشروعات القومية</h2>
+          <div class="projects-container">
+            <!-- العاصمة الإدارية الجديدة -->
+            <div class="project-card glass" data-aos="fade-up">
+              <a href="card-details.html?id=capital" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/capital.jpg" alt="تصميم حديث للمباني في العاصمة الإدارية الجديدة" data-lang="capital-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="capital-title">العاصمة الإدارية الجديدة</h3>
+                  <p data-lang="capital-desc">مدينة ذكية متكاملة بتغير وجه مصر... مباني حكومية، مناطق سكنية، ونظام نقل متطور.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- حياة كريمة -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="150">
+              <a href="card-details.html?id=hayaKarima" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/haya-karima.jpg" alt="مشاهد من مشروع حياة كريمة في الريف المصري" data-lang="haya-karima-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="haya-karima-title">حياة كريمة</h3>
+                  <p data-lang="haya-karima-desc">مبادرة عملاقة لتطوير الريف المصري ورفع جودة حياة ملايين المواطنين.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- الطرق والكباري -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="300">
+              <a href="card-details.html?id=roads" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/roads.jpg" alt="شبكة طرق وكباري حديثة في مصر" data-lang="roads-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="roads-title">الطرق والكباري</h3>
+                  <p data-lang="roads-desc">أكبر شبكة طرق حديثة بتربط بين المحافظات وبتسهل النقل والتجارة.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- توسعة قناة السويس -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="450">
+              <a href="card-details.html?id=suezCanal" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/suez-canal.jpg" alt="توسعة قناة السويس" data-lang="suez-canal-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="suez-canal-title">توسعة قناة السويس</h3>
+                  <p data-lang="suez-canal-desc">مشروع ضخم لزيادة قدرة قناة السويس على استيعاب السفن وزيادة حركة التجارة العالمية.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- مجمع بنبان للطاقة الشمسية -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="600">
+              <a href="card-details.html?id=benbanSolar" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/benban-solar.jpg" alt="مجمع بنبان للطاقة الشمسية" data-lang="benban-solar-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="benban-solar-title">مجمع بنبان للطاقة الشمسية</h3>
+                  <p data-lang="benban-solar-desc">أحد أكبر مشاريع الطاقة الشمسية في العالم، يساهم في تعزيز الطاقة النظيفة في مصر.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- المتحف المصري الكبير -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="750">
+              <a href="card-details.html?id=grandMuseum" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/grand-museum.jpg" alt="المتحف المصري الكبير" data-lang="grand-museum-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="grand-museum-title">المتحف المصري الكبير</h3>
+                  <p data-lang="grand-museum-desc">أكبر متحف أثري في العالم، يعرض تاريخ مصر العريق وآثارها الفريدة.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- محطة الضبعة النووية -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="900">
+              <a href="card-details.html?id=dabaa" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/dabaa.jpg" alt="محطة الضبعة النووية" data-lang="dabaa-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="dabaa-title">محطة الضبعة النووية</h3>
+                  <p data-lang="dabaa-desc">أول محطة نووية مصرية لإنتاج الكهرباء بقدرة 4800 ميجاوات لدعم احتياجات الطاقة المتزايدة.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- مدينة العلمين الجديدة -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="1050">
+              <a href="card-details.html?id=newAlamein" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/new-alamein.jpg" alt="مدينة العلمين الجديدة" data-lang="new-alamein-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="new-alamein-title">مدينة العلمين الجديدة</h3>
+                  <p data-lang="new-alamein-desc">مدينة سياحية عصرية على ساحل البحر المتوسط، تضم مناطق سكنية وسياحية وترفيهية.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- أنفاق قناة السويس -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="1200">
+              <a href="card-details.html?id=suezTunnels" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/suez-tunnels.jpg" alt="أنفاق قناة السويس" data-lang="suez-tunnels-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="suez-tunnels-title">أنفاق قناة السويس</h3>
+                  <p data-lang="suez-tunnels-desc">أنفاق عملاقة أسفل قناة السويس تربط سيناء بباقي أنحاء مصر وتعزز التنمية.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- مشروع الدلتا الجديدة -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="1350">
+              <a href="card-details.html?id=newDelta" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/new-delta.jpg" alt="مشروع الدلتا الجديدة" data-lang="new-delta-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="new-delta-title">مشروع الدلتا الجديدة</h3>
+                  <p data-lang="new-delta-desc">مشروع زراعي ضخم يهدف لاستصلاح مليون فدان وزيادة المساحات الزراعية وتحقيق الأمن الغذائي.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- مونوريل العاصمة الإدارية -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="1500">
+              <a href="card-details.html?id=monorail" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/monorail.jpg" alt="مونوريل العاصمة الإدارية" data-lang="monorail-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="monorail-title">مونوريل العاصمة الإدارية</h3>
+                  <p data-lang="monorail-desc">نظام نقل متطور يربط العاصمة الإدارية الجديدة بالقاهرة الكبرى والمدن الجديدة.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- مدينة الجلالة -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="1650">
+              <a href="card-details.html?id=galala" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/galala.jpg" alt="مدينة الجلالة" data-lang="galala-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="galala-title">مدينة الجلالة</h3>
+                  <p data-lang="galala-desc">مدينة متكاملة على هضبة الجلالة تضم منتجعات سياحية وجامعة ومدينة طبية ومناطق سكنية.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- محور روض الفرج -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="1800">
+              <a href="card-details.html?id=rodElFarag" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/rod-el-farag.jpg" alt="محور روض الفرج" data-lang="rod-el-farag-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="rod-el-farag-title">محور روض الفرج</h3>
+                  <p data-lang="rod-el-farag-desc">كوبري عملاق فوق نهر النيل يعد من أعرض الكباري في العالم ويخفف الازدحام المروري في القاهرة.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- مدينة الأثاث بدمياط -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="1950">
+              <a href="card-details.html?id=furnitureCity" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/furniture-city.jpg" alt="مدينة الأثاث بدمياط" data-lang="furniture-city-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="furniture-city-title">مدينة الأثاث بدمياط</h3>
+                  <p data-lang="furniture-city-desc">مدينة صناعية متخصصة في صناعة الأثاث تضم مصانع ومراكز تصميم ومعارض لتطوير صناعة الأثاث المصري.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- مشروع مثلث الذهب -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="2100">
+              <a href="card-details.html?id=goldenTriangle" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/golden-triangle.jpg" alt="مثلث الذهب" data-lang="golden-triangle-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="golden-triangle-title">مثلث الذهب</h3>
+                  <p data-lang="golden-triangle-desc">مشروع تنموي لاستغلال الثروات المعدنية والتعدينية في منطقة الصعيد وتحويلها لمركز اقتصادي عالمي.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- مشروع محور المحمودية -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="2250">
+              <a href="card-details.html?id=mahmoudia" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/mahmoudia.jpg" alt="محور المحمودية" data-lang="mahmoudia-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="mahmoudia-title">محور المحمودية</h3>
+                  <p data-lang="mahmoudia-desc">مشروع تطوير محور المحمودية بالإسكندرية لتحسين الحركة المرورية وتجميل المنطقة.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- مدينة الدواء -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="2400">
+              <a href="card-details.html?id=medicineCity" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/medicine-city.jpg" alt="مدينة الدواء" data-lang="medicine-city-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="medicine-city-title">مدينة الدواء</h3>
+                  <p data-lang="medicine-city-desc">مجمع صناعي متكامل لصناعة الدواء المصري وتوطين صناعة الدواء في مصر.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- مدينة الروبيكي للجلود -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="2550">
+              <a href="card-details.html?id=robikiCity" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/robiki.jpg" alt="مدينة الروبيكي للجلود" data-lang="robiki-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="robiki-title">مدينة الروبيكي للجلود</h3>
+                  <p data-lang="robiki-desc">مدينة صناعية متخصصة في صناعة الجلود وتطوير هذه الصناعة في مصر.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- مشروع تطوير القاهرة التاريخية -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="2700">
+              <a href="card-details.html?id=historicCairo" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/historic-cairo.jpg" alt="تطوير القاهرة التاريخية" data-lang="historic-cairo-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="historic-cairo-title">تطوير القاهرة التاريخية</h3>
+                  <p data-lang="historic-cairo-desc">مشروع إحياء وتطوير منطقة القاهرة التاريخية وترميم المباني الأثرية.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- مدينة العلوم والتكنولوجيا -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="2850">
+              <a href="card-details.html?id=scienceCity" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/science-city.jpg" alt="مدينة العلوم والتكنولوجيا" data-lang="science-city-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="science-city-title">مدينة العلوم والتكنولوجيا</h3>
+                  <p data-lang="science-city-desc">مركز للبحث العلمي والابتكار في مصر، يضم معامل ومراكز أبحاث متطورة.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- مشروع المليون ونصف فدان -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="3000">
+              <a href="card-details.html?id=millionFeddan" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/million-feddan.jpg" alt="مشروع المليون ونصف فدان" data-lang="million-feddan-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="million-feddan-title">مشروع المليون ونصف فدان</h3>
+                  <p data-lang="million-feddan-desc">مشروع استصلاح وزراعة مليون ونصف فدان لزيادة الرقعة الزراعية في مصر.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- مدينة الفنون والثقافة -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="3150">
+              <a href="card-details.html?id=artsCity" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/arts-city.jpg" alt="مدينة الفنون والثقافة" data-lang="arts-city-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="arts-city-title">مدينة الفنون والثقافة</h3>
+                  <p data-lang="arts-city-desc">مركز ثقافي وفني متكامل يضم مسارح وقاعات عرض ومراكز تدريب فنية.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- مشروع تطوير بحيرة المنزلة -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="3300">
+              <a href="card-details.html?id=manzalaLake" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/manzala-lake.jpg" alt="تطوير بحيرة المنزلة" data-lang="manzala-lake-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="manzala-lake-title">تطوير بحيرة المنزلة</h3>
+                  <p data-lang="manzala-lake-desc">مشروع تطهير وتنمية بحيرة المنزلة لزيادة الثروة السمكية وحماية البيئة.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- مشروع القطار الكهربائي السريع -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="3450">
+              <a href="card-details.html?id=electricTrain" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/electric-train.jpg" alt="القطار الكهربائي السريع" data-lang="electric-train-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="electric-train-title">القطار الكهربائي السريع</h3>
+                  <p data-lang="electric-train-desc">شبكة قطارات كهربائية سريعة تربط مدن مصر الجديدة والقائمة.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- مدينة الجلالة السياحية -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="3600">
+              <a href="card-details.html?id=galalaTourism" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/galala-tourism.jpg" alt="مدينة الجلالة السياحية" data-lang="galala-tourism-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="galala-tourism-title">مدينة الجلالة السياحية</h3>
+                  <p data-lang="galala-tourism-desc">منتجع سياحي متكامل على البحر الأحمر يضم فنادق ومراكز ترفيهية.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- مشروع تطوير شبكة الري -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="3750">
+              <a href="card-details.html?id=irrigationNetwork" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/irrigation.jpg" alt="تطوير شبكة الري" data-lang="irrigation-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="irrigation-title">تطوير شبكة الري</h3>
+                  <p data-lang="irrigation-desc">مشروع تطوير وتحديث شبكة الري في مصر لترشيد استهلاك المياه.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- مشروع تطوير العشوائيات -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="3900">
+              <a href="card-details.html?id=slumDevelopment" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/slum-development.jpg" alt="تطوير العشوائيات" data-lang="slum-development-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="slum-development-title">تطوير العشوائيات</h3>
+                  <p data-lang="slum-development-desc">مشروع تطوير المناطق العشوائية وتحويلها لمناطق سكنية حضارية.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- مشروع المتحف القومي للحضارة -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="4050">
+              <a href="card-details.html?id=civilizationMuseum" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/civilization-museum.jpg" alt="المتحف القومي للحضارة" data-lang="civilization-museum-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="civilization-museum-title">المتحف القومي للحضارة</h3>
+                  <p data-lang="civilization-museum-desc">متحف يعرض تاريخ الحضارة المصرية عبر العصور المختلفة.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- مشروع محطات تحلية المياه -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="4200">
+              <a href="card-details.html?id=waterDesalination" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/water-desalination.jpg" alt="محطات تحلية المياه" data-lang="water-desalination-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="water-desalination-title">محطات تحلية المياه</h3>
+                  <p data-lang="water-desalination-desc">مشروع إنشاء محطات تحلية مياه البحر لتوفير مياه الشرب النظيفة.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- مشروع تطوير شبكة الكهرباء -->
+            <div class="project-card glass" data-aos="fade-up" data-aos-delay="4350">
+              <a href="card-details.html?id=electricityNetwork" class="project-link">
+                <div class="project-image">
+                  <img loading="lazy" src="images/electricity-network.jpg" alt="تطوير شبكة الكهرباء" data-lang="electricity-network-img-alt">
+                </div>
+                <div class="project-content glass">
+                  <h3 data-lang="electricity-network-title">تطوير شبكة الكهرباء</h3>
+                  <p data-lang="electricity-network-desc">مشروع تحديث وتطوير شبكة الكهرباء في مصر لتلبية احتياجات التنمية.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer animate__animated animate__fadeInUp animate__delay-2s">
+      <div class="footer-content">
+        <h3 data-lang="footer-title">مبادرة "مصر بعيون النيل"</h3>
+        <p data-lang="footer-slogan">معًا بالوعي نحميها 🇪🇬</p>
+        <ul class="footer-links">
+          <li><a href="index.html" data-lang="footer-home">الرئيسية</a></li>
+          <li><a href="goals.html" data-lang="footer-goals">الأهداف</a></li>
+          <li><a href="future.html" data-lang="footer-future">رؤية المستقبل</a></li>
+          <li><a href="share.html" data-lang="footer-share">شارك برؤيتك</a></li>
+        </ul>
+        <p class="copyright">
+          <span data-lang="footer-copyright">جميع الحقوق محفوظة - طلاب مدارس النيل</span> &copy; <span id="currentYear"></span> 💡
+        </p>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="اطلع فوق" data-lang="back-to-top">⬆️</button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      // Translations object containing all text content in both languages
+      const translations = {
+        ar: {
+          "page-title": "المشاريع | مصر بعيون النيل",
+          "logo-alt": "شعار مصر بعيون النيل",
+          "site-title": "مصر بعيون النيل",
+          "home": "الرئيسية",
+          "goals": "الأهداف",
+          "projects": "المشاريع",
+          "videos": "فيديوهات",
+          "theme-switch-label": "تغيير المظهر",
+          "lang-switch-label": "تغيير اللغة",
+          "main-projects": "أهم المشروعات القومية",
+          "capital-title": "العاصمة الإدارية الجديدة",
+          "capital-desc": "مدينة ذكية متكاملة بتغير وجه مصر... مباني حكومية، مناطق سكنية، ونظام نقل متطور.",
+          "capital-img-alt": "تصميم حديث للمباني في العاصمة الإدارية الجديدة",
+          "haya-karima-title": "حياة كريمة",
+          "haya-karima-desc": "مبادرة عملاقة لتطوير الريف المصري ورفع جودة حياة ملايين المواطنين.",
+          "haya-karima-img-alt": "مشاهد من مشروع حياة كريمة في الريف المصري",
+          "roads-title": "الطرق والكباري",
+          "roads-desc": "أكبر شبكة طرق حديثة بتربط بين المحافظات وبتسهل النقل والتجارة.",
+          "roads-img-alt": "شبكة طرق وكباري حديثة في مصر",
+          "suez-canal-title": "توسعة قناة السويس",
+          "suez-canal-desc": "مشروع ضخم لزيادة قدرة قناة السويس على استيعاب السفن وزيادة حركة التجارة العالمية.",
+          "suez-canal-img-alt": "توسعة قناة السويس",
+          "benban-solar-title": "مجمع بنبان للطاقة الشمسية",
+          "benban-solar-desc": "أحد أكبر مشاريع الطاقة الشمسية في العالم، يساهم في تعزيز الطاقة النظيفة في مصر.",
+          "benban-solar-img-alt": "مجمع بنبان للطاقة الشمسية",
+          "grand-museum-title": "المتحف المصري الكبير",
+          "grand-museum-desc": "أكبر متحف أثري في العالم، يعرض تاريخ مصر العريق وآثارها الفريدة.",
+          "grand-museum-img-alt": "المتحف المصري الكبير",
+          "dabaa-title": "محطة الضبعة النووية",
+          "dabaa-desc": "أول محطة نووية مصرية لإنتاج الكهرباء بقدرة 4800 ميجاوات لدعم احتياجات الطاقة المتزايدة.",
+          "dabaa-img-alt": "محطة الضبعة النووية",
+          "new-alamein-title": "مدينة العلمين الجديدة",
+          "new-alamein-desc": "مدينة سياحية عصرية على ساحل البحر المتوسط، تضم مناطق سكنية وسياحية وترفيهية.",
+          "new-alamein-img-alt": "مدينة العلمين الجديدة",
+          "suez-tunnels-title": "أنفاق قناة السويس",
+          "suez-tunnels-desc": "أنفاق عملاقة أسفل قناة السويس تربط سيناء بباقي أنحاء مصر وتعزز التنمية.",
+          "suez-tunnels-img-alt": "أنفاق قناة السويس",
+          "new-delta-title": "مشروع الدلتا الجديدة",
+          "new-delta-desc": "مشروع زراعي ضخم يهدف لاستصلاح مليون فدان وزيادة المساحات الزراعية وتحقيق الأمن الغذائي.",
+          "new-delta-img-alt": "مشروع الدلتا الجديدة",
+          "monorail-title": "مونوريل العاصمة الإدارية",
+          "monorail-desc": "نظام نقل متطور يربط العاصمة الإدارية الجديدة بالقاهرة الكبرى والمدن الجديدة.",
+          "monorail-img-alt": "مونوريل العاصمة الإدارية",
+          "galala-title": "مدينة الجلالة",
+          "galala-desc": "مدينة متكاملة على هضبة الجلالة تضم منتجعات سياحية وجامعة ومدينة طبية ومناطق سكنية.",
+          "galala-img-alt": "مدينة الجلالة",
+          "rod-el-farag-title": "محور روض الفرج",
+          "rod-el-farag-desc": "كوبري عملاق فوق نهر النيل يعد من أعرض الكباري في العالم ويخفف الازدحام المروري في القاهرة.",
+          "rod-el-farag-img-alt": "محور روض الفرج",
+          "furniture-city-title": "مدينة الأثاث بدمياط",
+          "furniture-city-desc": "مدينة صناعية متخصصة في صناعة الأثاث تضم مصانع ومراكز تصميم ومعارض لتطوير صناعة الأثاث المصري.",
+          "furniture-city-img-alt": "مدينة الأثاث بدمياط",
+          "golden-triangle-title": "مثلث الذهب",
+          "golden-triangle-desc": "مشروع تنموي لاستغلال الثروات المعدنية والتعدينية في منطقة الصعيد وتحويلها لمركز اقتصادي عالمي.",
+          "golden-triangle-img-alt": "مثلث الذهب",
+          "mahmoudia-title": "محور المحمودية",
+          "mahmoudia-desc": "مشروع تطوير محور المحمودية بالإسكندرية لتحسين الحركة المرورية وتجميل المنطقة.",
+          "mahmoudia-img-alt": "محور المحمودية",
+          "medicine-city-title": "مدينة الدواء",
+          "medicine-city-desc": "مجمع صناعي متكامل لصناعة الدواء المصري وتوطين صناعة الدواء في مصر.",
+          "medicine-city-img-alt": "مدينة الدواء",
+          "robiki-title": "مدينة الروبيكي للجلود",
+          "robiki-desc": "مدينة صناعية متخصصة في صناعة الجلود وتطوير هذه الصناعة في مصر.",
+          "robiki-img-alt": "مدينة الروبيكي للجلود",
+          "historic-cairo-title": "تطوير القاهرة التاريخية",
+          "historic-cairo-desc": "مشروع إحياء وتطوير منطقة القاهرة التاريخية وترميم المباني الأثرية.",
+          "historic-cairo-img-alt": "تطوير القاهرة التاريخية",
+          "science-city-title": "مدينة العلوم والتكنولوجيا",
+          "science-city-desc": "مركز للبحث العلمي والابتكار في مصر، يضم معامل ومراكز أبحاث متطورة.",
+          "science-city-img-alt": "مدينة العلوم والتكنولوجيا",
+          "million-feddan-title": "مشروع المليون ونصف فدان",
+          "million-feddan-desc": "مشروع استصلاح وزراعة مليون ونصف فدان لزيادة الرقعة الزراعية في مصر.",
+          "million-feddan-img-alt": "مشروع المليون ونصف فدان",
+          "arts-city-title": "مدينة الفنون والثقافة",
+          "arts-city-desc": "مركز ثقافي وفني متكامل يضم مسارح وقاعات عرض ومراكز تدريب فنية.",
+          "arts-city-img-alt": "مدينة الفنون والثقافة",
+          "manzala-lake-title": "تطوير بحيرة المنزلة",
+          "manzala-lake-desc": "مشروع تطهير وتنمية بحيرة المنزلة لزيادة الثروة السمكية وحماية البيئة.",
+          "manzala-lake-img-alt": "تطوير بحيرة المنزلة",
+          "electric-train-title": "القطار الكهربائي السريع",
+          "electric-train-desc": "شبكة قطارات كهربائية سريعة تربط مدن مصر الجديدة والقائمة.",
+          "electric-train-img-alt": "القطار الكهربائي السريع",
+          "galala-tourism-title": "مدينة الجلالة السياحية",
+          "galala-tourism-desc": "منتجع سياحي متكامل على البحر الأحمر يضم فنادق ومراكز ترفيهية.",
+          "galala-tourism-img-alt": "مدينة الجلالة السياحية",
+          "irrigation-title": "تطوير شبكة الري",
+          "irrigation-desc": "مشروع تطوير وتحديث شبكة الري في مصر لترشيد استهلاك المياه.",
+          "irrigation-img-alt": "تطوير شبكة الري",
+          "slum-development-title": "تطوير العشوائيات",
+          "slum-development-desc": "مشروع تطوير المناطق العشوائية وتحويلها لمناطق سكنية حضارية.",
+          "slum-development-img-alt": "تطوير العشوائيات",
+          "civilization-museum-title": "المتحف القومي للحضارة",
+          "civilization-museum-desc": "متحف يعرض تاريخ الحضارة المصرية عبر العصور المختلفة.",
+          "civilization-museum-img-alt": "المتحف القومي للحضارة",
+          "water-desalination-title": "محطات تحلية المياه",
+          "water-desalination-desc": "مشروع إنشاء محطات تحلية مياه البحر لتوفير مياه الشرب النظيفة.",
+          "water-desalination-img-alt": "محطات تحلية المياه",
+          "electricity-network-title": "تطوير شبكة الكهرباء",
+          "electricity-network-desc": "مشروع تحديث وتطوير شبكة الكهرباء في مصر لتلبية احتياجات التنمية.",
+          "electricity-network-img-alt": "تطوير شبكة الكهرباء",
+          "footer-title": 'مبادرة "مصر بعيون النيل"',
+          "footer-slogan": "معًا بالوعي نحميها 🇪🇬",
+          "footer-home": "الرئيسية",
+          "footer-goals": "الأهداف",
+          "footer-future": "رؤية المستقبل",
+          "footer-share": "شارك برؤيتك",
+          "footer-copyright": "جميع الحقوق محفوظة - طلاب مدارس النيل",
+          "back-to-top": "⬆️"
+        },
+        en: {
+          "page-title": "Projects | Egypt Through Nile's Eyes",
+          "logo-alt": "Egypt Through Nile's Eyes Logo",
+          "site-title": "Egypt Through Nile's Eyes",
+          "home": "Home",
+          "goals": "Goals",
+          "projects": "Projects",
+          "videos": "Videos",
+          "theme-switch-label": "Change Theme",
+          "lang-switch-label": "Change Language",
+          "main-projects": "Main National Projects",
+          "capital-title": "New Administrative Capital",
+          "capital-desc": "A comprehensive smart city transforming Egypt's landscape with government buildings, residential areas, and advanced transportation.",
+          "capital-img-alt": "Modern design of buildings in the New Administrative Capital",
+          "haya-karima-title": "Decent Life",
+          "haya-karima-desc": "A massive initiative to develop rural Egypt and improve the quality of life for millions of citizens.",
+          "haya-karima-img-alt": "Scenes from the Decent Life project in rural Egypt",
+          "roads-title": "Roads and Bridges",
+          "roads-desc": "The largest modern road network connecting governorates and facilitating transportation and trade.",
+          "roads-img-alt": "Modern network of roads and bridges in Egypt",
+          "suez-canal-title": "Suez Canal Expansion",
+          "suez-canal-desc": "A massive project to increase the Suez Canal's capacity for ships and boost global trade.",
+          "suez-canal-img-alt": "Suez Canal Expansion",
+          "benban-solar-title": "Benban Solar Park",
+          "benban-solar-desc": "One of the world's largest solar energy projects, contributing to clean energy in Egypt.",
+          "benban-solar-img-alt": "Benban Solar Park",
+          "grand-museum-title": "Grand Egyptian Museum",
+          "grand-museum-desc": "The world's largest archaeological museum, showcasing Egypt's rich history and unique artifacts.",
+          "grand-museum-img-alt": "Grand Egyptian Museum",
+          "dabaa-title": "El Dabaa Nuclear Power Plant",
+          "dabaa-desc": "Egypt's first nuclear power plant with 4800 MW capacity to support growing energy needs.",
+          "dabaa-img-alt": "El Dabaa Nuclear Power Plant",
+          "new-alamein-title": "New Alamein City",
+          "new-alamein-desc": "A modern tourist city on the Mediterranean coast with residential, tourism, and entertainment areas.",
+          "new-alamein-img-alt": "New Alamein City",
+          "suez-tunnels-title": "Suez Canal Tunnels",
+          "suez-tunnels-desc": "Giant tunnels under the Suez Canal connecting Sinai with the rest of Egypt and boosting development.",
+          "suez-tunnels-img-alt": "Suez Canal Tunnels",
+          "new-delta-title": "New Delta Project",
+          "new-delta-desc": "A massive agricultural project aiming to reclaim one million feddans and achieve food security.",
+          "new-delta-img-alt": "New Delta Project",
+          "monorail-title": "Administrative Capital Monorail",
+          "monorail-desc": "An advanced transportation system connecting the New Administrative Capital with Greater Cairo and new cities.",
+          "monorail-img-alt": "Administrative Capital Monorail",
+          "galala-title": "El Galala City",
+          "galala-desc": "An integrated city on El Galala plateau with tourist resorts, university, medical city, and residential areas.",
+          "galala-img-alt": "El Galala City",
+          "rod-el-farag-title": "Rod El Farag Axis",
+          "rod-el-farag-desc": "A giant bridge over the Nile, one of the widest bridges in the world, reducing traffic congestion in Cairo.",
+          "rod-el-farag-img-alt": "Rod El Farag Axis",
+          "furniture-city-title": "Damietta Furniture City",
+          "furniture-city-desc": "A specialized industrial city for furniture manufacturing with factories, design centers, and showrooms.",
+          "furniture-city-img-alt": "Damietta Furniture City",
+          "golden-triangle-title": "Golden Triangle",
+          "golden-triangle-desc": "A development project to utilize mineral resources in Upper Egypt and transform it into a global economic center.",
+          "golden-triangle-img-alt": "Golden Triangle",
+          "mahmoudia-title": "Mahmoudia Axis",
+          "mahmoudia-desc": "Development project of Mahmoudia Axis in Alexandria to improve traffic flow and beautify the area.",
+          "mahmoudia-img-alt": "Mahmoudia Axis",
+          "medicine-city-title": "Medicine City",
+          "medicine-city-desc": "An integrated industrial complex for Egyptian pharmaceutical manufacturing and localizing the medicine industry.",
+          "medicine-city-img-alt": "Medicine City",
+          "robiki-title": "El Robiki Leather City",
+          "robiki-desc": "A specialized industrial city for leather manufacturing and developing this industry in Egypt.",
+          "robiki-img-alt": "El Robiki Leather City",
+          "historic-cairo-title": "Historic Cairo Development",
+          "historic-cairo-desc": "Project to revive and develop the historic Cairo area and restore historic buildings.",
+          "historic-cairo-img-alt": "Historic Cairo Development",
+          "science-city-title": "Science and Technology City",
+          "science-city-desc": "A center for scientific research and innovation in Egypt with advanced laboratories and research centers.",
+          "science-city-img-alt": "Science and Technology City",
+          "million-feddan-title": "1.5 Million Feddan Project",
+          "million-feddan-desc": "Project to reclaim and cultivate 1.5 million feddans to increase Egypt's agricultural area.",
+          "million-feddan-img-alt": "1.5 Million Feddan Project",
+          "arts-city-title": "Arts and Culture City",
+          "arts-city-desc": "An integrated cultural and artistic center with theaters, exhibition halls, and art training centers.",
+          "arts-city-img-alt": "Arts and Culture City",
+          "manzala-lake-title": "Lake Manzala Development",
+          "manzala-lake-desc": "Project to clean and develop Lake Manzala to increase fish wealth and protect the environment.",
+          "manzala-lake-img-alt": "Lake Manzala Development",
+          "electric-train-title": "Electric Express Train",
+          "electric-train-desc": "Network of fast electric trains connecting Egypt's new and existing cities.",
+          "electric-train-img-alt": "Electric Express Train",
+          "galala-tourism-title": "El Galala Tourist City",
+          "galala-tourism-desc": "An integrated tourist resort on the Red Sea with hotels and entertainment centers.",
+          "galala-tourism-img-alt": "El Galala Tourist City",
+          "irrigation-title": "Irrigation Network Development",
+          "irrigation-desc": "Project to develop and modernize Egypt's irrigation network to rationalize water consumption.",
+          "irrigation-img-alt": "Irrigation Network Development",
+          "slum-development-title": "Slum Development",
+          "slum-development-desc": "Project to develop informal areas and transform them into civilized residential areas.",
+          "slum-development-img-alt": "Slum Development",
+          "civilization-museum-title": "National Museum of Civilization",
+          "civilization-museum-desc": "A museum showcasing Egyptian civilization throughout different eras.",
+          "civilization-museum-img-alt": "National Museum of Civilization",
+          "water-desalination-title": "Water Desalination Plants",
+          "water-desalination-desc": "Project to establish seawater desalination plants to provide clean drinking water.",
+          "water-desalination-img-alt": "Water Desalination Plants",
+          "electricity-network-title": "Electricity Network Development",
+          "electricity-network-desc": "Project to modernize and develop Egypt's electricity network to meet development needs.",
+          "electricity-network-img-alt": "Electricity Network Development",
+          "footer-title": '"Egypt Through Nile\'s Eyes" Initiative',
+          "footer-slogan": "Together with awareness, we protect it 🇪🇬",
+          "footer-home": "Home",
+          "footer-goals": "Goals",
+          "footer-future": "Future Vision",
+          "footer-share": "Share Your Vision",
+          "footer-copyright": "All Rights Reserved - Nile Schools Students",
+          "back-to-top": "⬆️"
+        }
+      };
+
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        once: true,
+        easing: 'ease-in-out',
+      });
+      
+      // Language Switcher
+      const langSwitch = document.getElementById('langSwitch');
+      const langText = langSwitch.querySelector('.lang-text');
+      let currentLang = localStorage.getItem('language') || 'ar';
+
+      // Function to update page content based on selected language
+      function updateContent(lang) {
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        langText.textContent = lang === 'ar' ? 'EN' : 'عربي';
+        
+        // Update all elements with data-lang attribute
+        document.querySelectorAll('[data-lang]').forEach(element => {
+          const key = element.getAttribute('data-lang');
+          if (translations[lang][key]) {
+            if (element.tagName === 'TITLE' || element.hasAttribute('title')) {
+              element.title = translations[lang][key];
+            }
+            if (element.tagName === 'META' && element.getAttribute('name') === 'description') {
+              element.setAttribute('content', translations[lang][key]);
+            }
+            if (element.tagName === 'IMG') {
+              element.alt = translations[lang][key];
+            } else {
+              element.textContent = translations[lang][key];
+            }
+          }
+        });
+
+        // Store language preference
+        localStorage.setItem('language', lang);
+      }
+
+      // Initialize page with stored language preference
+      updateContent(currentLang);
+
+      // Language switch event listener
+      langSwitch.addEventListener('click', () => {
+        currentLang = currentLang === 'ar' ? 'en' : 'ar';
+        updateContent(currentLang);
+      });
+      
+      // Update year automatically
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      
+      // Loading spinner
+      window.addEventListener('load', function() {
+        document.getElementById('loading-spinner').style.display = 'none';
+      });
+      
+      // Back to top button
+      const backToTopBtn = document.getElementById('backToTop');
+      
+      window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+          backToTopBtn.style.display = "block";
+        } else {
+          backToTopBtn.style.display = "none";
+        }
+      };
+      
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Theme Switcher
+      const themeSwitch = document.getElementById('themeSwitch');
+      const themeIcon = themeSwitch.querySelector('.theme-icon');
+      let currentTheme = localStorage.getItem('theme') || 'light';
+      
+      function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+        localStorage.setItem('theme', theme);
+      }
+      
+      setTheme(currentTheme);
+      
+      themeSwitch.addEventListener('click', () => {
+        currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+        setTheme(currentTheme);
+      });
+    </script>
+  </div>
+</body>
+</html>

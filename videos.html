@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="فيديوهات توثيقية عن إنجازات مصر والمشروعات القومية - مبادرة مصر بعيون النيل">
+  <title>فيديوهات توثيقية | مصر بعيون النيل</title>
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('ServiceWorker registration successful');
+          })
+          .catch(err => {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+      });
+    }
+  </script>
+</head>
+
+<body>
+    <!-- Dark theme video -->
+    <video class="video-background video-dark" autoplay muted loop playsinline preload="auto">
+        <source src="live wallbaber/blackhole.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+    
+    <!-- Light theme video -->
+    <video class="video-background video-light" autoplay muted loop playsinline preload="auto">
+        <source src="live wallbaber/cards-video.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="content-wrapper">
+    <!-- Loading Spinner -->
+    <div id="loading-spinner">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="animate__animated animate__fadeInDown animate__delay-1s">
+      <div class="header-wrapper">
+        <img src="images/logo.png" alt="شعار مصر بعيون النيل" class="header-logo">
+        <div class="header-content">
+          <h1>مصر بعيون النيل</h1>
+          <nav aria-label="القائمة الرئيسية">
+            <ul>
+              <li><a href="index.html" class="active" data-lang="home">الرئيسية</a></li>
+              <li><a href="goals.html" data-lang="goals">الأهداف</a></li>
+              <li><a href="projects.html" data-lang="projects">المشاريع</a></li>
+              <li><a href="videos.html" data-lang="videos">فيديوهات</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header-controls">
+          <button id="themeSwitch" class="theme-switch" aria-label="تغيير المظهر">
+            <span class="theme-icon">🌙</span>
+          </button>
+          <button id="langSwitch" class="lang-switch" aria-label="تغيير اللغة">
+            <span class="lang-text" data-lang="ar">EN</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Featured Video Section -->
+      <section class="video-featured">
+        <div class="container">
+          <h2 class="animate__animated animate__fadeInDown animate__delay-1s" data-lang="featured-video-title">العاصمة الادارية</h2>
+          <div class="featured-video-wrapper" data-aos="zoom-in">
+            <div class="video-container">
+              <iframe width="100%" height="500" src="https://www.youtube.com/embed/7wYUf9MYP2o?si=P-RhV03xpvvOzA2T"
+                title="فيديو رئيسي" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-info">
+              <h3 data-lang="featured-video-title">العاصمة الادارية</h3>
+              <p data-lang="featured-video-desc">مدينة ذكية متكاملة بتغير وجه مصر... تمثل نقلة حضارية واقتصادية كبرى للدولة المصرية.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Additional Videos Section -->
+      <section class="videos-grid">
+        <div class="container">
+          <h2 class="animate__animated animate__fadeInDown animate__delay-1s" data-lang="videos-title">فيديوهات أخرى</h2>
+          <div class="videos-container">
+            <div class="video-card" data-aos="fade-up">
+              <div class="video-thumbnail">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/417LQjjSNU0?si=WHTqvB_tXEZeIHEu"
+                  title="حياة كريمة" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <div class="video-details">
+                <h3 data-lang="haya-karima-video-title">حياة كريمة</h3>
+                <p data-lang="haya-karima-video-desc">مبادرة عملاقة لتطوير الريف المصري ورفع جودة حياة ملايين المواطنين</p>
+              </div>
+            </div>
+
+            <div class="video-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="video-thumbnail">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/elSnliAlpJY?si=fkJu1stU0B_Qb8OC"
+                  title="توثيق ٣" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <div class="video-details">
+                <h3 data-lang="roads-video-title">الطرق والكباري</h3>
+                <p data-lang="roads-video-desc">أكبر شبكة طرق حديثة في تاريخ مصر، تربط بين المحافظات وتسهل حركة النقل والتجارة</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer animate__animated animate__fadeInUp animate__delay-2s">
+      <div class="footer-content">
+        <h3 data-lang="footer-title">مبادرة "مصر بعيون النيل"</h3>
+        <p data-lang="footer-slogan">معًا بالوعي نحميها 🇪🇬</p>
+        <ul class="footer-links">
+          <li><a href="index.html" data-lang="footer-home">الرئيسية</a></li>
+          <li><a href="goals.html" data-lang="footer-goals">الأهداف</a></li>
+          <li><a href="future.html" data-lang="footer-future">رؤية المستقبل</a></li>
+          <li><a href="share.html" data-lang="footer-share">شارك برؤيتك</a></li>
+          <li><a href="videos.html" data-lang="footer-videos">فيديوهات</a></li>
+        </ul>
+        <p class="copyright">
+          &copy; <span id="currentYear"></span> <span data-lang="footer-copyright">جميع الحقوق محفوظة - طلاب مدارس النيل</span> 💡
+        </p>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="اطلع فوق" data-lang="back-to-top">⬆️</button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      // Translations object containing all text content in both languages
+      const translations = {
+        ar: {
+          "page-title": "الفيديوهات | مصر بعيون النيل",
+          "logo-alt": "شعار مصر بعيون النيل",
+          "site-title": "مصر بعيون النيل",
+          "home": "الرئيسية",
+          "goals": "الأهداف",
+          "projects": "المشاريع",
+          "videos": "فيديوهات",
+          "theme-switch-label": "تغيير المظهر",
+          "lang-switch-label": "تغيير اللغة",
+          "featured-video-title": "العاصمة الادارية",
+          "featured-video-desc": "مدينة ذكية متكاملة بتغير وجه مصر... تمثل نقلة حضارية واقتصادية كبرى للدولة المصرية.",
+          "videos-title": "فيديوهات أخرى",
+          "haya-karima-video-title": "حياة كريمة",
+          "haya-karima-video-desc": "مبادرة عملاقة لتطوير الريف المصري ورفع جودة حياة ملايين المواطنين",
+          "roads-video-title": "الطرق والكباري",
+          "roads-video-desc": "أكبر شبكة طرق حديثة في تاريخ مصر، تربط بين المحافظات وتسهل حركة النقل والتجارة",
+          "footer-title": 'مبادرة "مصر بعيون النيل"',
+          "footer-slogan": "معًا بالوعي نحميها 🇪🇬",
+          "footer-home": "الرئيسية",
+          "footer-goals": "الأهداف",
+          "footer-future": "رؤية المستقبل",
+          "footer-share": "شارك برؤيتك",
+          "footer-videos": "فيديوهات",
+          "footer-copyright": "جميع الحقوق محفوظة - طلاب مدارس النيل",
+          "back-to-top": "⬆️"
+        },
+        en: {
+          "page-title": "Videos | Egypt Through Nile's Eyes",
+          "logo-alt": "Egypt Through Nile's Eyes Logo",
+          "site-title": "Egypt Through Nile's Eyes",
+          "home": "Home",
+          "goals": "Goals",
+          "projects": "Projects",
+          "videos": "Videos",
+          "theme-switch-label": "Change Theme",
+          "lang-switch-label": "Change Language",
+          "featured-video-title": "New Administrative Capital",
+          "featured-video-desc": "A comprehensive smart city transforming Egypt's landscape... representing a major urban and economic shift for the Egyptian state.",
+          "videos-title": "More Videos",
+          "haya-karima-video-title": "Decent Life",
+          "haya-karima-video-desc": "A massive initiative to develop rural Egypt and improve the quality of life for millions of citizens",
+          "roads-video-title": "Roads and Bridges",
+          "roads-video-desc": "The largest modern road network in Egypt's history, connecting governorates and facilitating transportation and trade",
+          "footer-title": '"Egypt Through Nile\'s Eyes" Initiative',
+          "footer-slogan": "Together with awareness, we protect it 🇪🇬",
+          "footer-home": "Home",
+          "footer-goals": "Goals",
+          "footer-future": "Future Vision",
+          "footer-share": "Share Your Vision",
+          "footer-videos": "Videos",
+          "footer-copyright": "All Rights Reserved - Nile Schools Students",
+          "back-to-top": "⬆️"
+        }
+      };
+
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        once: true,
+        easing: 'ease-in-out',
+      });
+      
+      // Language Switcher
+      const langSwitch = document.getElementById('langSwitch');
+      const langText = langSwitch.querySelector('.lang-text');
+      let currentLang = localStorage.getItem('language') || 'ar';
+
+      // Function to update page content based on selected language
+      function updateContent(lang) {
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        langText.textContent = lang === 'ar' ? 'EN' : 'عربي';
+        
+        // Update all elements with data-lang attribute
+        document.querySelectorAll('[data-lang]').forEach(element => {
+          const key = element.getAttribute('data-lang');
+          if (translations[lang][key]) {
+            if (element.tagName === 'TITLE' || element.hasAttribute('title')) {
+              element.title = translations[lang][key];
+            }
+            if (element.tagName === 'META' && element.getAttribute('name') === 'description') {
+              element.setAttribute('content', translations[lang][key]);
+            }
+            if (element.tagName === 'IMG') {
+              element.alt = translations[lang][key];
+            } else {
+              element.textContent = translations[lang][key];
+            }
+          }
+        });
+
+        // Store language preference
+        localStorage.setItem('language', lang);
+      }
+
+      // Initialize page with stored language preference
+      updateContent(currentLang);
+
+      // Language switch event listener
+      langSwitch.addEventListener('click', () => {
+        currentLang = currentLang === 'ar' ? 'en' : 'ar';
+        updateContent(currentLang);
+      });
+      
+      // Update year automatically
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      
+      // Loading spinner
+      window.addEventListener('load', function() {
+        document.getElementById('loading-spinner').style.display = 'none';
+      });
+      
+      // Back to top button
+      const backToTopBtn = document.getElementById('backToTop');
+      
+      window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+          backToTopBtn.style.display = "block";
+        } else {
+          backToTopBtn.style.display = "none";
+        }
+      };
+      
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Theme Switcher
+      const themeSwitch = document.getElementById('themeSwitch');
+      const themeIcon = themeSwitch.querySelector('.theme-icon');
+      let currentTheme = localStorage.getItem('theme') || 'light';
+      
+      function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+        localStorage.setItem('theme', theme);
+      }
+      
+      setTheme(currentTheme);
+      
+      themeSwitch.addEventListener('click', () => {
+        currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+        setTheme(currentTheme);
+      });
+    </script>
+</body>
+
+</html>

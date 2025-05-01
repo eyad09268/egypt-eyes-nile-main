@@ -1,0 +1,16 @@
+{
+  "name": "مصر بعيون النيل",
+  "short_name": "مصر بعيون النيل",
+  "description": "مبادرة مصر بعيون النيل لتوعية الشباب بالمشروعات القومية ورؤية مصر 2030",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0077b6",
+  "icons": [
+    {
+      "src": "images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+} 

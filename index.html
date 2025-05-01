@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="مبادرة مصر بعيون النيل لتوعية الشباب بالمشروعات القومية ورؤية مصر 2030">
+  <title data-lang="page-title">الرئيسية | مصر بعيون النيل</title>
+  <link rel="manifest" href="/manifest.json">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('ServiceWorker registration successful');
+          })
+          .catch(err => {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+      });
+    }
+  </script>
+</head>
+
+<body>
+    <!-- Dark theme video -->
+    <video class="video-background video-dark" autoplay muted loop playsinline preload="auto">
+        <source src="live wallbaber/blackhole.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+    
+    <!-- Light theme video -->
+    <video class="video-background video-light" autoplay muted loop playsinline preload="auto">
+        <source src="live wallbaber/cards-video.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+
+    <div id="loading-spinner">
+      <div class="spinner"></div>
+    </div>
+    <div class="content-wrapper">
+      <header>
+        <div class="header-wrapper">
+          <div class="logo-container">
+            <img src="images/logo.png" alt="شعار مصر بعيون النيل" class="header-logo">
+            <h1 class="site-title">مصر بعيون النيل</h1>
+          </div>
+          
+          <nav aria-label="القائمة الرئيسية">
+            <ul>
+              <li><a href="index.html" class="active" data-lang="home">الرئيسية</a></li>
+              <li><a href="goals.html" data-lang="goals">الأهداف</a></li>
+              <li><a href="projects.html" data-lang="projects">المشاريع</a></li>
+              <li><a href="videos.html" data-lang="videos">فيديوهات</a></li>
+            </ul>
+          </nav>
+
+          <div class="header-controls">
+            <button id="themeSwitch" class="theme-switch" aria-label="تغيير المظهر">
+              <span class="theme-icon">🌙</span>
+            </button>
+            <button id="langSwitch" class="lang-switch" aria-label="تغيير اللغة">
+              <span class="lang-text" data-lang="ar">EN</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero animate__animated animate__fadeIn animate__delay-1s">
+          <div class="hero-overlay"></div>
+          <div class="hero-background">
+            <img src="images/hero-bg.jpg" alt="رئيس الجمهورية" class="hero-image">
+          </div>
+          <div class="container">
+            <div class="hero-content">
+              <div class="hero-text glass">
+                <h2 class="hero-title" data-lang="hero-title">مستقبل مصر</h2>
+                <h3 class="hero-subtitle" data-lang="hero-subtitle">بنحلمه وهنحققه</h3>
+                <p class="hero-description animate__animated animate__fadeInUp animate__delay-2s" data-lang="hero-description">
+                  مع بعض بالوعي نحميها 💪🇪🇬
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="projects">
+          <div class="container">
+            <h2 class="animate__animated animate__fadeInUp animate__delay-1s glass" data-lang="main-projects">أهم المشروعات القومية</h2>
+            <div class="projects-container">
+              <div class="project-card glass" data-aos="fade-up">
+                <a href="card-details.html?id=capital" class="project-link">
+                  <div class="project-image">
+                    <img loading="lazy" src="images/capital.jpg" alt="تصميم حديث للمباني في العاصمة الإدارية الجديدة">
+                  </div>
+                  <div class="project-content glass">
+                    <h3 data-lang="capital-title">العاصمة الإدارية الجديدة</h3>
+                    <p data-lang="capital-desc">مدينة ذكية بتغير وجه مصر... مباني حكومية، مناطق سكنية، ونظام نقل متطور.</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="project-card glass" data-aos="fade-up" data-aos-delay="150">
+                <a href="card-details.html?id=hayaKarima" class="project-link">
+                  <div class="project-image">
+                    <img loading="lazy" src="images/haya-karima.jpg" alt="مشاهد من مشروع حياة كريمة في الريف المصري">
+                  </div>
+                  <div class="project-content glass">
+                    <h3 data-lang="haya-karima-title">حياة كريمة</h3>
+                    <p data-lang="haya-karima-desc">مبادرة عملاقة لتطوير الريف المصري ورفع جودة حياة ملايين المواطنين.</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="project-card glass" data-aos="fade-up" data-aos-delay="300">
+                <a href="card-details.html?id=roads" class="project-link">
+                  <div class="project-image">
+                    <img loading="lazy" src="images/roads.jpg" alt="شبكة طرق وكباري حديثة في مصر">
+                  </div>
+                  <div class="project-content glass">
+                    <h3 data-lang="roads-title">الطرق والكباري</h3>
+                    <p data-lang="roads-desc">أكبر شبكة طرق حديثة بتربط بين المحافظات وبتسهل النقل والتجارة.</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="future" id="future">
+          <div class="container">
+            <h2 class="animate__animated animate__fadeInDown animate__delay-1s glass" data-lang="future-vision">رؤية المستقبل</h2>
+            <div class="future-container">
+              <div class="future-card glass" data-aos="fade-right" data-aos-delay="200">
+                <div class="future-icon">💸</div>
+                <p data-lang="future-quote-1">"أنا شايف إن مصر هتبقى من أقوى 10 اقتصاديات في العالم"</p>
+                <h4>- أحمد مصطفى</h4>
+              </div>
+          
+              <div class="future-card glass" data-aos="fade-left" data-aos-delay="300">
+                <div class="future-icon">🚄</div>
+                <p data-lang="future-quote-2">"هتكون فيها قطارات سريعة في كل محافظة وتكنولوجيا في كل بيت"</p>
+                <h4>- سارة محمد</h4>
+              </div>
+          
+              <div class="future-card glass" data-aos="zoom-in" data-aos-delay="400">
+                <div class="future-icon">📱</div>
+                <p data-lang="future-quote-3">"هيكون عندنا مدارس ذكية لكل الطلاب، ونت سريع في كل حتة"</p>
+                <h4>- ياسين وائل</h4>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="animate__animated animate__fadeInUp animate__delay-2s glass">
+        <div class="footer-content">
+          <div class="footer-main">
+            <div class="footer-info glass">
+              <h3 data-lang="footer-title">مبادرة "مصر بعيون النيل"</h3>
+              <p data-lang="footer-subtitle">معًا بالوعي نحميها 🇪🇬</p>
+            </div>
+            <nav class="footer-nav">
+              <ul class="footer-links">
+                <li><a href="index.html" class="glass" data-lang="home">الرئيسية</a></li>
+                <li><a href="goals.html" class="glass" data-lang="goals">الأهداف</a></li>
+                <li><a href="projects.html" class="glass" data-lang="projects">المشاريع</a></li>
+                <li><a href="videos.html" class="glass" data-lang="videos">فيديوهات</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer-bottom glass">
+            <p class="copyright">
+              © <span id="currentYear"></span> 
+              <span data-lang="copyright">جميع الحقوق محفوظة - طلاب مدارس النيل</span> 
+              💡
+            </p>
+          </div>
+        </div>
+      </footer>
+      <button id="backToTop" class="glass" title="اطلع فوق" data-lang="back-to-top">⬆️</button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      // Translations object containing all text content in both languages
+      const translations = {
+        ar: {
+          "page-title": "الرئيسية | مصر بعيون النيل",
+          "logo-alt": "شعار مصر بعيون النيل",
+          "site-title": "مصر بعيون النيل",
+          "home": "الرئيسية",
+          "goals": "الأهداف",
+          "projects": "المشاريع",
+          "videos": "فيديوهات",
+          "theme-switch-label": "تغيير المظهر",
+          "lang-switch-label": "تغيير اللغة",
+          "hero-title": "مستقبل مصر",
+          "hero-subtitle": "بنحلمه وهنحققه",
+          "hero-description": "مع بعض بالوعي نحميها 💪🇪🇬",
+          "main-projects": "أهم المشروعات القومية",
+          "capital-title": "العاصمة الإدارية الجديدة",
+          "capital-desc": "مدينة ذكية بتغير وجه مصر... مباني حكومية، مناطق سكنية، ونظام نقل متطور.",
+          "haya-karima-title": "حياة كريمة",
+          "haya-karima-desc": "مبادرة عملاقة لتطوير الريف المصري ورفع جودة حياة ملايين المواطنين.",
+          "roads-title": "الطرق والكباري",
+          "roads-desc": "أكبر شبكة طرق حديثة بتربط بين المحافظات وبتسهل النقل والتجارة.",
+          "future-vision": "رؤية المستقبل",
+          "future-quote-1": "أنا شايف إن مصر هتبقى من أقوى 10 اقتصاديات في العالم",
+          "future-quote-2": "هتكون فيها قطارات سريعة في كل محافظة وتكنولوجيا في كل بيت",
+          "future-quote-3": "هيكون عندنا مدارس ذكية لكل الطلاب، ونت سريع في كل حتة",
+          "footer-title": 'مبادرة "مصر بعيون النيل"',
+          "footer-subtitle": "معًا بالوعي نحميها 🇪🇬",
+          "copyright": "جميع الحقوق محفوظة - طلاب مدارس النيل",
+          "back-to-top": "اطلع فوق"
+        },
+        en: {
+          "page-title": "Home | Egypt Through Nile's Eyes",
+          "logo-alt": "Egypt Through Nile's Eyes Logo",
+          "site-title": "Egypt Through Nile's Eyes",
+          "home": "Home",
+          "goals": "Goals",
+          "projects": "Projects",
+          "videos": "Videos",
+          "theme-switch-label": "Change Theme",
+          "lang-switch-label": "Change Language",
+          "hero-title": "Egypt's Future",
+          "hero-subtitle": "We Dream It, We Achieve It",
+          "hero-description": "Together with awareness, we protect it 💪🇪🇬",
+          "main-projects": "Main National Projects",
+          "capital-title": "New Administrative Capital",
+          "capital-desc": "A smart city transforming Egypt's landscape with government buildings, residential areas, and advanced transportation.",
+          "haya-karima-title": "Decent Life",
+          "haya-karima-desc": "A massive initiative to develop rural Egypt and improve the quality of life for millions of citizens.",
+          "roads-title": "Roads and Bridges",
+          "roads-desc": "The largest modern road network connecting governorates and facilitating transportation and trade.",
+          "future-vision": "Future Vision",
+          "future-quote-1": "I see Egypt becoming one of the top 10 economies in the world",
+          "future-quote-2": "We'll have fast trains in every governorate and technology in every home",
+          "future-quote-3": "We'll have smart schools for all students and fast internet everywhere",
+          "footer-title": '"Egypt Through Nile\'s Eyes" Initiative',
+          "footer-subtitle": "Together with awareness, we protect it 🇪🇬",
+          "copyright": "All Rights Reserved - Nile Schools Students",
+          "back-to-top": "Back to Top"
+        }
+      };
+
+      AOS.init({
+        duration: 1000,
+        once: true,
+        easing: 'ease-in-out',
+      });
+      
+      // Update year automatically
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      
+      // Loading spinner
+      window.addEventListener('load', function() {
+        document.getElementById('loading-spinner').style.display = 'none';
+      });
+      
+      // Back to top button
+      const backToTopBtn = document.getElementById('backToTop');
+      
+      window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+          backToTopBtn.style.display = "block";
+        } else {
+          backToTopBtn.style.display = "none";
+        }
+      };
+      
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Theme Switcher
+      const themeSwitch = document.getElementById('themeSwitch');
+      const themeIcon = themeSwitch.querySelector('.theme-icon');
+      let currentTheme = localStorage.getItem('theme') || 'light';
+      
+      function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+        localStorage.setItem('theme', theme);
+      }
+      
+      setTheme(currentTheme);
+      
+      themeSwitch.addEventListener('click', () => {
+        currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+        setTheme(currentTheme);
+      });
+
+      // Language Switcher
+      const langSwitch = document.getElementById('langSwitch');
+      const langText = langSwitch.querySelector('.lang-text');
+      let currentLang = localStorage.getItem('language') || 'ar';
+
+      // Function to update page content based on selected language
+      function updateContent(lang) {
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        langText.textContent = lang === 'ar' ? 'EN' : 'عربي';
+        
+        // Update all elements with data-lang attribute
+        document.querySelectorAll('[data-lang]').forEach(element => {
+          const key = element.getAttribute('data-lang');
+          if (translations[lang][key]) {
+            if (element.tagName === 'TITLE' || element.hasAttribute('title')) {
+              element.title = translations[lang][key];
+            }
+            if (element.tagName === 'META' && element.getAttribute('name') === 'description') {
+              element.setAttribute('content', translations[lang][key]);
+            }
+            if (element.tagName === 'IMG') {
+              element.alt = translations[lang][key];
+            } else {
+              element.textContent = translations[lang][key];
+            }
+          }
+        });
+
+        // Store language preference
+        localStorage.setItem('language', lang);
+      }
+
+      // Initialize page with stored language preference
+      updateContent(currentLang);
+
+      // Language switch event listener
+      langSwitch.addEventListener('click', () => {
+        currentLang = currentLang === 'ar' ? 'en' : 'ar';
+        updateContent(currentLang);
+      });
+    </script>
+</body>
+</html>
