@@ -479,7 +479,7 @@ header::before {
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
   transition: var(--transition-normal);
 }
-
+ 
 .header-content {
   flex-grow: 1;
   display: flex;
