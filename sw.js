@@ -9,6 +9,8 @@ const urlsToCache = [
   '/images/capital.jpg',
   '/images/haya-karima.jpg',
   '/images/roads.jpg',
+  '/images/dark-background.jpg',
+  '/images/light-background.jpg',
   'https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap',
   'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css',
   'https://unpkg.com/aos@2.3.4/dist/aos.css',
