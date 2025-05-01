@@ -7,6 +7,19 @@
   <title data-lang="page-title">الرئيسية | مصر بعيون النيل</title>
   <link rel="manifest" href="/manifest.json">
   
+  <!-- Preload critical resources -->
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="preload" href="images/logo.png" as="image">
+  <link rel="preload" href="images/dark-background.jpg" as="image">
+  <link rel="preload" href="images/light-background.jpg" as="image">
+  <link rel="preload" href="images/hero-bg.jpg" as="image">
+  
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   
@@ -36,10 +49,10 @@
 
 <body>
     <!-- Dark theme background -->
-    <img class="background-image background-dark" src="images/dark-background.jpg" alt="Dark theme background">
+    <img class="background-image background-dark" src="images/dark-background.jpg" alt="Dark theme background" fetchpriority="high">
     
     <!-- Light theme background -->
-    <img class="background-image background-light" src="images/light-background.jpg" alt="Light theme background">
+    <img class="background-image background-light" src="images/light-background.jpg" alt="Light theme background" fetchpriority="high">
 
     <div id="loading-spinner">
       <div class="spinner"></div>
@@ -48,7 +61,7 @@
       <header>
         <div class="header-wrapper">
           <div class="logo-container">
-            <img src="images/logo.png" alt="شعار مصر بعيون النيل" class="header-logo">
+            <img src="images/logo.png" alt="شعار مصر بعيون النيل" class="header-logo" fetchpriority="high">
             <h1 class="site-title">مصر بعيون النيل</h1>
           </div>
           
@@ -76,7 +89,7 @@
         <section class="hero animate__animated animate__fadeIn animate__delay-1s">
           <div class="hero-overlay"></div>
           <div class="hero-background">
-            <img src="images/hero-bg.jpg" alt="رئيس الجمهورية" class="hero-image">
+            <img src="images/hero-bg.jpg" alt="رئيس الجمهورية" class="hero-image" fetchpriority="high">
           </div>
           <div class="container">
             <div class="hero-content">
@@ -188,21 +201,17 @@
       <button id="backToTop" class="glass" title="اطلع فوق" data-lang="back-to-top">⬆️</button>
     </div>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <!-- Defer non-critical scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
     <script>
-      // Translations object containing all text content in both languages
+      // Translations object
       const translations = {
         ar: {
           "page-title": "الرئيسية | مصر بعيون النيل",
-          "logo-alt": "شعار مصر بعيون النيل",
-          "site-title": "مصر بعيون النيل",
           "home": "الرئيسية",
           "goals": "الأهداف",
           "projects": "المشاريع",
           "videos": "فيديوهات",
-          "theme-switch-label": "تغيير المظهر",
-          "lang-switch-label": "تغيير اللغة",
           "hero-title": "مستقبل مصر",
           "hero-subtitle": "بنحلمه وهنحققه",
           "hero-description": "مع بعض بالوعي نحميها 💪🇪🇬",
@@ -214,49 +223,48 @@
           "roads-title": "الطرق والكباري",
           "roads-desc": "أكبر شبكة طرق حديثة بتربط بين المحافظات وبتسهل النقل والتجارة.",
           "future-vision": "رؤية المستقبل",
-          "future-quote-1": "أنا شايف إن مصر هتبقى من أقوى 10 اقتصاديات في العالم",
-          "future-quote-2": "هتكون فيها قطارات سريعة في كل محافظة وتكنولوجيا في كل بيت",
-          "future-quote-3": "هيكون عندنا مدارس ذكية لكل الطلاب، ونت سريع في كل حتة",
-          "footer-title": 'مبادرة "مصر بعيون النيل"',
+          "future-quote-1": "\"أنا شايف إن مصر هتبقى من أقوى 10 اقتصاديات في العالم\"",
+          "future-quote-2": "\"هتكون فيها قطارات سريعة في كل محافظة وتكنولوجيا في كل بيت\"",
+          "future-quote-3": "\"هيكون عندنا مدارس ذكية لكل الطلاب، ونت سريع في كل حتة\"",
+          "footer-title": "مبادرة \"مصر بعيون النيل\"",
           "footer-subtitle": "معًا بالوعي نحميها 🇪🇬",
           "copyright": "جميع الحقوق محفوظة - طلاب مدارس النيل",
           "back-to-top": "اطلع فوق"
         },
         en: {
           "page-title": "Home | Egypt Through Nile's Eyes",
-          "logo-alt": "Egypt Through Nile's Eyes Logo",
-          "site-title": "Egypt Through Nile's Eyes",
           "home": "Home",
           "goals": "Goals",
           "projects": "Projects",
           "videos": "Videos",
-          "theme-switch-label": "Change Theme",
-          "lang-switch-label": "Change Language",
           "hero-title": "Egypt's Future",
           "hero-subtitle": "We Dream It, We Achieve It",
           "hero-description": "Together with awareness, we protect it 💪🇪🇬",
-          "main-projects": "Main National Projects",
-          "capital-title": "New Administrative Capital",
-          "capital-desc": "A smart city transforming Egypt's landscape with government buildings, residential areas, and advanced transportation.",
+          "main-projects": "Major National Projects",
+          "capital-title": "The New Administrative Capital",
+          "capital-desc": "A smart city changing Egypt's face... Government buildings, residential areas, and advanced transportation.",
           "haya-karima-title": "Decent Life",
           "haya-karima-desc": "A massive initiative to develop rural Egypt and improve the quality of life for millions of citizens.",
           "roads-title": "Roads and Bridges",
-          "roads-desc": "The largest modern road network connecting governorates and facilitating transportation and trade.",
+          "roads-desc": "The largest modern road network connecting governorates and facilitating transport and trade.",
           "future-vision": "Future Vision",
-          "future-quote-1": "I see Egypt becoming one of the top 10 economies in the world",
-          "future-quote-2": "We'll have fast trains in every governorate and technology in every home",
-          "future-quote-3": "We'll have smart schools for all students and fast internet everywhere",
-          "footer-title": '"Egypt Through Nile\'s Eyes" Initiative',
+          "future-quote-1": "\"I see Egypt becoming one of the top 10 economies in the world\"",
+          "future-quote-2": "\"It will have high-speed trains in every governorate and technology in every home\"",
+          "future-quote-3": "\"We'll have smart schools for all students and fast internet everywhere\"",
+          "footer-title": "\"Egypt Through Nile's Eyes\" Initiative",
           "footer-subtitle": "Together with awareness, we protect it 🇪🇬",
           "copyright": "All Rights Reserved - Nile Schools Students",
           "back-to-top": "Back to Top"
         }
       };
 
-      AOS.init({
-        duration: 1000,
-        once: true,
-        easing: 'ease-in-out',
+      // Defer initialization of AOS
+      document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+          duration: 1000,
+          once: true,
+          easing: 'ease-in-out',
+        });
       });
       
       // Update year automatically
@@ -305,7 +313,6 @@
       const langText = langSwitch.querySelector('.lang-text');
       let currentLang = localStorage.getItem('language') || 'ar';
 
-      // Function to update page content based on selected language
       function updateContent(lang) {
         document.documentElement.lang = lang;
         document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
@@ -314,17 +321,19 @@
         // Update all elements with data-lang attribute
         document.querySelectorAll('[data-lang]').forEach(element => {
           const key = element.getAttribute('data-lang');
-          if (translations[lang][key]) {
-            if (element.tagName === 'TITLE' || element.hasAttribute('title')) {
-              element.title = translations[lang][key];
-            }
-            if (element.tagName === 'META' && element.getAttribute('name') === 'description') {
-              element.setAttribute('content', translations[lang][key]);
-            }
-            if (element.tagName === 'IMG') {
-              element.alt = translations[lang][key];
+          if (translations[lang] && translations[lang][key]) {
+            const translation = translations[lang][key];
+            
+            if (element.tagName === 'META') {
+              element.setAttribute('content', translation);
+            } else if (element.tagName === 'TITLE') {
+              document.title = translation;
+            } else if (element.hasAttribute('title')) {
+              element.setAttribute('title', translation);
+            } else if (element.tagName === 'IMG') {
+              element.setAttribute('alt', translation);
             } else {
-              element.textContent = translations[lang][key];
+              element.textContent = translation;
             }
           }
         });
@@ -333,7 +342,7 @@
         localStorage.setItem('language', lang);
       }
 
-      // Initialize page with stored language preference
+      // Initialize with stored language preference
       updateContent(currentLang);
 
       // Language switch event listener
