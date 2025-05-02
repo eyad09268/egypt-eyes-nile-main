@@ -2321,10 +2321,11 @@ footer {
 }
 
 .send-button {
+  color: black;
   width: clamp(45px, 6vw, 50px);
   height: clamp(45px, 6vw, 50px);
   background: var(--primary-color);
-  color: white;
+  color: var(--text-light);
   border: none;
   border-radius: 15px;
   display: flex;
@@ -2332,6 +2333,41 @@ footer {
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.send-button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .send-button {
+  background: var(--primary-color);
+  color: white;
+}
+
+[data-theme="light"] .send-button:hover {
+  background: var(--primary-dark);
+}
+
+[data-theme="dark"] .send-button {
+  background: var(--primary-color);
+  color: white;
+}
+
+[data-theme="dark"] .send-button:hover {
+  background: var(--primary-dark);
+}
+
+.send-button .material-symbols-rounded {
+  font-size: 1.5rem;
+  transform: rotate(-45deg);
+  transition: transform 0.3s ease;
+}
+
+.send-button:hover .material-symbols-rounded {
+  transform: rotate(-45deg) scale(1.1);
 }
 
 .controls {
