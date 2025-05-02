@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!-- Coding By EYAD-WAEL - www.EYAD-WAELweb.com -->
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Chatbot | EYAD AI</title>
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="preload" href="images/dark-background.jpg" as="image">
+  <link rel="preload" href="images/light-background.jpg" as="image">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Material Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+  
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Background Images -->
+  <img class="background-image background-dark" src="images/dark-background.jpg" alt="Dark theme background" fetchpriority="high">
+  <img class="background-image background-light" src="images/light-background.jpg" alt="Light theme background" fetchpriority="high">
+
+  <div class="app-container">
+    <!-- Main Chat Area -->
+    <div class="main-container glass">
+      <div class="chat-header">
+        <h1 class="title">AI Chatbot</h1>
+        <p class="subtitle">Hello, there</p>
+      </div>
+
+      <!-- Chat Messages -->
+      <div class="chat-messages">
+        <!-- Example of an incoming message -->
+        <div class="message incoming">
+          <img src="images/gemini.png" alt="AI" class="avatar">
+          <div class="message-content glass">
+            <p class="text">Hi there! How can I help you today?</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Typing Area -->
+      <div class="typing-container glass">
+        <form action="#" class="typing-form">
+          <div class="input-wrapper">
+            <input type="text" placeholder="اكتب رسالتك هنا..." class="typing-input" required />
+            <button type="submit" class="send-button glass">
+              <span class="material-symbols-rounded">send</span>
+            </button>
+          </div>
+          <div class="controls">
+            <button type="button" class="control-button" id="delete-chat">
+              <span class="material-symbols-rounded">delete</span>
+            </button>
+          </div>
+        </form>
+        <p class="disclaimer">This AI may display inaccurate info, including about people, so double-check its responses.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const typingForm = document.querySelector(".typing-form");
+    const chatContainer = document.querySelector(".chat-messages");
+    const deleteChatButton = document.querySelector("#delete-chat");
+    
+    // State variables
+    let userMessage = null;
+    let isResponseGenerating = false;
+    
+    // API configuration
+    const API_KEY = "AIzaSyD9n3CP_b10aYjGQtWtHtzONXAzDzFs1Ws";
+    const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
+    
+    // Load chat data from local storage on page load
+    const loadDataFromLocalstorage = () => {
+      const savedChats = localStorage.getItem("saved-chats");
+      chatContainer.innerHTML = savedChats || '';
+      chatContainer.scrollTo(0, chatContainer.scrollHeight);
+    }
+    
+    // Create a new message element
+    const createMessageElement = (content, className) => {
+      const messageDiv = document.createElement("div");
+      messageDiv.className = `message ${className}`;
+      messageDiv.innerHTML = content;
+      return messageDiv;
+    }
+    
+    // Show typing effect
+    const showTypingEffect = (text, textElement, messageDiv) => {
+      const words = text.split(' ');
+      let currentWordIndex = 0;
+    
+      const typingInterval = setInterval(() => {
+        textElement.innerText += (currentWordIndex === 0 ? '' : ' ') + words[currentWordIndex++];
+    
+        if (currentWordIndex === words.length) {
+          clearInterval(typingInterval);
+          isResponseGenerating = false;
+          localStorage.setItem("saved-chats", chatContainer.innerHTML);
+        }
+        chatContainer.scrollTo(0, chatContainer.scrollHeight);
+      }, 75);
+    }
+    
+    // Generate API response
+    const generateAPIResponse = async (messageDiv) => {
+      const textElement = messageDiv.querySelector(".text");
+    
+      try {
+        const response = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            contents: [{
+              role: "user",
+              parts: [{ text: userMessage }]
+            }]
+          }),
+        });
+    
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error.message);
+    
+        const apiResponse = data?.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, '$1');
+        showTypingEffect(apiResponse, textElement, messageDiv);
+      } catch (error) {
+        isResponseGenerating = false;
+        textElement.innerText = error.message;
+        messageDiv.classList.add("error");
+      }
+    }
+    
+    // Handle outgoing chat
+    const handleOutgoingChat = () => {
+      userMessage = typingForm.querySelector(".typing-input").value.trim();
+      if(!userMessage || isResponseGenerating) return;
+    
+      isResponseGenerating = true;
+    
+      // Add user message
+      const outgoingHtml = `
+        <img src="images/user.jpg" alt="User" class="avatar">
+        <div class="message-content glass">
+          <p class="text">${userMessage}</p>
+        </div>
+      `;
+      chatContainer.appendChild(createMessageElement(outgoingHtml, "outgoing"));
+    
+      // Add AI response
+      const incomingHtml = `
+        <img src="images/gemini.png" alt="AI" class="avatar">
+        <div class="message-content glass">
+          <p class="text"></p>
+        </div>
+      `;
+      const incomingMessage = createMessageElement(incomingHtml, "incoming");
+      chatContainer.appendChild(incomingMessage);
+    
+      typingForm.reset();
+      chatContainer.scrollTo(0, chatContainer.scrollHeight);
+      setTimeout(() => generateAPIResponse(incomingMessage), 500);
+    }
+    
+    // Delete chat
+    deleteChatButton.addEventListener("click", () => {
+      if (confirm("هل أنت متأكد من حذف جميع المحادثات؟")) {
+        localStorage.removeItem("saved-chats");
+        loadDataFromLocalstorage();
+      }
+    });
+    
+    // Handle form submission
+    typingForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      handleOutgoingChat();
+    });
+    
+    loadDataFromLocalstorage();
+  </script>
+</body>
+</html>
